@@ -1,0 +1,138 @@
+ORGANISM:  NZ_CP042278.1 Streptomyces sp. WAC6273 substr. delta orf15 pCRISPR	1	Range: 2535751 - 2535908
+POSITION	REPEAT				SPACER
+--------	--------------------------	----------------------------------------
+2535751		CGAGCAGGCGCTGACCGAGGCCCGCG	AGGAGGGCGAGCGGATCCGCCGCGAGGCCGCCGAGGAGAG	[ 26, 40 ]
+2535817		CGAGCGGCTGCGCACCGAGGCCGCCG	AGCGCATCCGTACGCTCCAGCAGCAGGCCGAGACGGAGGC	[ 26, 40 ]
+2535883		CGAGCGGCTGCGCACCGAGGCCGCCG	
+--------	--------------------------	----------------------------------------
+Repeats: 3	Average Length: 26		Average Length: 40
+
+
+
+CRISPR	2	Range: 2761883 - 2761995
+POSITION	REPEAT				SPACER
+--------	-----------------------------	-------------------------------------------------------
+2761883		ACCCGCAAGACGGCCACCGCCAAGGCGGA	AGCCGCCGCCGACACCGTCGAGGCGACCGAGGTCGCCGAGACCAAGCCCCGGCGC	[ 29, 55 ]
+2761967		ACCCGCAAGACGGCCACCGCCAAGGCGGA	
+--------	-----------------------------	-------------------------------------------------------
+Repeats: 2	Average Length: 29		Average Length: 55
+
+
+
+CRISPR	3	Range: 2766936 - 2767015
+POSITION	REPEAT				SPACER
+--------	---------------------	--------------------------------------
+2766936		CGGACCCGCCGGGCGGGCCGG	ACATACCGCCCCACCGCACCCGGACCGCGCCCCGTCGT	[ 21, 38 ]
+2766995		CGGACCCGCCGGGCGGGCCGG	
+--------	---------------------	--------------------------------------
+Repeats: 2	Average Length: 21		Average Length: 38
+
+
+
+CRISPR	4	Range: 2868341 - 2868410
+POSITION	REPEAT				SPACER
+--------	-------------------------	--------------------
+2868341		CTCGGTCTCCGGCGCCTCGGTCGTC	GGCGCCTCGGTCGTCGGCTC	[ 25, 20 ]
+2868386		CTCGGTCTCCGGCGCCTCGGTCGTC	
+--------	-------------------------	--------------------
+Repeats: 2	Average Length: 25		Average Length: 20
+
+
+
+CRISPR	5	Range: 4158705 - 4158856
+POSITION	REPEAT				SPACER
+--------	-----------------------------	--------------------------------
+4158705		GACCGTGGCGGCTTCCGCCGTGACGACCG	CAACGACCGTCGTGACGACCGTGGC	[ 29, 25 ]
+4158759		GGCCGTTCGTTCGAGCGCCGTGACGACCG	CGGGGGCTTCCGTCGGGACGACCGTCGTGACGACCGCGGT	[ 29, 40 ]
+4158828		GGCCGTTCGTTCGAGCGCCGTGACGACCG	
+--------	-----------------------------	--------------------------------
+Repeats: 3	Average Length: 29		Average Length: 32
+
+
+
+CRISPR	6	Range: 4504335 - 4504411
+POSITION	REPEAT				SPACER
+--------	-----------------------	-------------------------------
+4504335		CCCCCGCCGGAACACCGCACCCC	GCGGAGACACCGCCCCCGCCGAGACACGGCA	[ 23, 31 ]
+4504389		CCCCCGCCGGAACACCGCACCCC	
+--------	-----------------------	-------------------------------
+Repeats: 2	Average Length: 23		Average Length: 31
+
+
+
+CRISPR	7	Range: 5324347 - 5324431
+POSITION	REPEAT				SPACER
+--------	-------------------------	-----------------------------------
+5324347		ACCTGGGACCCGGCGACCGGCCGGC	TGCTCTGGATCGACATCCTGAACTCCCGCGTCCAT	[ 25, 35 ]
+5324407		ACCTGGGACCCGGCGACCGGCCGGC	
+--------	-------------------------	-----------------------------------
+Repeats: 2	Average Length: 25		Average Length: 35
+
+
+
+CRISPR	8	Range: 5327836 - 5327914
+POSITION	REPEAT				SPACER
+--------	-------------------------	-----------------------------
+5327836		CGCCCGCCGTGGTCGTGCCGCTCGG	TGTGGTCGTACCGCTCGGCGTCGTCGTGC	[ 25, 29 ]
+5327890		CGCCCGCCGTGGTCGTGCCGCTCGG	
+--------	-------------------------	-----------------------------
+Repeats: 2	Average Length: 25		Average Length: 29
+
+
+
+CRISPR	9	Range: 5709374 - 5709552
+POSITION	REPEAT				SPACER
+--------	-----------------------------	----------------------------------------------
+5709374		GCCCGGGACAGCCACCCCCGGCCCCCCGG	ACGCCGAACTGCTGGGACAGCCACTCCCGGCCCCCGGCCGCCGAACC	[ 29, 47 ]
+5709450		GCCCGGGACAGCCACCCCCGGCCCCCCGG	CCGCCGATCGGCACGGACAGCCCCCAGGCCCCGCGGACGCCGAGC	[ 29, 45 ]
+5709524		GGTCCGGATAGCCGCCCCCGGGCCGCCGG	
+--------	-----------------------------	----------------------------------------------
+Repeats: 3	Average Length: 29		Average Length: 46
+
+
+
+CRISPR	10	Range: 5821636 - 5821946
+POSITION	REPEAT				SPACER
+--------	-------------------------	----------------------------------------------
+5821636		CCGGCCGCCCACGAGAGCCCGTCGT	TCGTCCAGACCCCTCCCGGCCGTCCACGCGAGCCGTCGTCCGCGCCGGCCGCTC	[ 25, 54 ]
+5821715		CCGGCCGTCCGCGCGAGCCCGTCGC	CCAGGCGACCGCGCTGCCGCACCGGACCGGCCGCGCAAGCCGCA	[ 25, 44 ]
+5821784		CCGGCCGTCCGCGCGAGCCCGTCGC	TCAGGCGTCCGCGCTGCCGCACCGGGCCGGTCGCGCAAGCCGCA	[ 25, 44 ]
+5821853		CCGGCCGTCCACACGAGCCCGTCGC	TCAGGCGTCCGCGCTGCCGCACCGGACCGGTCGCGCAAGCCGCA	[ 25, 44 ]
+5821922		CCGGCCGTCCACACGAGCCCGTCGC	
+--------	-------------------------	----------------------------------------------
+Repeats: 5	Average Length: 25		Average Length: 46
+
+
+
+CRISPR	11	Range: 6013230 - 6013414
+POSITION	REPEAT				SPACER
+--------	--------------------	-----------------------------------
+6013230		TTCGGGCGGCGTGACGACAG	CCGTGGCGGTGACCGGGGCGGT	[ 20, 22 ]
+6013272		TTCCGCGGGCGTGACGACCG	GGGTGGCTTCGCCGGCCGGGACGACCGGGGTGGC	[ 20, 34 ]
+6013326		TTCCGTGGGCGGGACGACCG	TGGGGGACGTGGGCCCCGGCGGGACGACCGAGGCGGGCGGCCCGGCGGT	[ 20, 49 ]
+6013395		TTCCGTGGGCGGGACGACCG	
+--------	--------------------	-----------------------------------
+Repeats: 4	Average Length: 20		Average Length: 35
+
+
+
+CRISPR	12	Range: 6331861 - 6331934
+POSITION	REPEAT				SPACER
+--------	---------------------------	--------------------
+6331861		TATCCCGCTCTTCCGCATGAATCGCCC	TGCGGAGCCTGCCGCCAGAT	[ 27, 20 ]
+6331908		TATCCCGCTCTTCCGCATGAATCGCCC	
+--------	---------------------------	--------------------
+Repeats: 2	Average Length: 27		Average Length: 20
+
+
+
+CRISPR	13	Range: 2520021 - 2520084
+POSITION	REPEAT				SPACER
+--------	----------------------	--------------------
+2520021		GCCCGCCCCGGCCGGTCGGCGC	GGGCGGAGCCCCCTGGGGAC	[ 22, 20 ]
+2520063		GCCCGCCCCGGCCGGTCGGCGC	
+--------	----------------------	--------------------
+Repeats: 2	Average Length: 22		Average Length: 20
+
+
+
