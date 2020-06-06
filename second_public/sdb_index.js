@@ -7,6 +7,7 @@
 //    Date: 5/20/2020 - Present
 //
 //============================================================================
+
 var tmp = window.location.href;
 var click = 0
 if (tmp.search("var=") != -1) {
@@ -14,140 +15,16 @@ if (tmp.search("var=") != -1) {
 }
 
 
-var table = $('#table').DataTable({
-    serverSide: false,
-    processing: false,
-    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-    ajax: {
-        url: "/data",
-        type: "POST",
-    },    
-    columns: [ 
-        { data : "genome_id" },
-        //{ data : "release_num" },
-        { data : "RefSeqAssembly_Accession" },
-        //{ data : "GenBankAssembly_Accession" },
-        { data: "RefSeq_Accession" },
-        //{ data : "RefSeqCategory" },        
-        { data : "taxId" },        
-        { data : "species_taxId" },
-        { data : "organism_name" },
-        //{ data : "infraspecific_name" },
-        //{ data : "isolate" },
-        { data : "genome_length" },
-        { data: "domain" },
-        //{ data : "fasta_file_name" }
-        { data: "crispr_count",
-          "render": function(data, type, row, meta){
-          
-          if(type === 'display' && data != 0){
-              var tmp = row.organism_name;
-              //tmp=tmp.replace(" ", "%20");
-              data = '<a href="/crispr.html?genome_id=' + row.genome_id + '&organism_name=' + tmp + '">' + data + '</a>';
-          }
-
-          return data;
-          }
-        }
-
-   ]     
-}); 
-
-
-async function getSummaryTab() {
-  var type = 1;
-  var data = {type};
-  var options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  };
-
-  const response = await fetch('/summarydata', options);
-  const responseData = await response.json();
-
-
-  // archaea occurrences
-  var summaryHtml = '<h3>CRISPR Occurrences - Archaea</h3><table class="pure-table pure-table-horizontal" id="archaeaOccurrences"';
-  summaryHtml = summaryHtml + '<tr><td>Number of Archaea Without CRISPRs</td><td>' + responseData.occurrenceData[0].archaea + '</td></tr>';
-  summaryHtml = summaryHtml + '<tr><td>Total Number Of Archaea</td><td>' + responseData.occurrenceData[0].archaeaTotal + '</td></tr>';
-  var archaeaPercentage = responseData.occurrenceData[0].archaea/responseData.occurrenceData[0].archaeaTotal * 100;
-  archaeaPercentage = archaeaPercentage.toFixed(3);
-  summaryHtml = summaryHtml + '<tr><td>Percentage of Archaea Without CRISPRs</td><td>' + archaeaPercentage + '%</td></tr></table>';
-
-  // bacteria occurrences 
-  summaryHtml = summaryHtml + '<h3>CRISPR Occurrences - Bacteria</h3><table class="pure-table pure-table-horizontal" id="bacteriaOccurrences"';
-  summaryHtml = summaryHtml + '<tr><td>Number of Bacteria Without CRISPRs</td><td>' + responseData.occurrenceData[0].bacteria + '</td></tr>';
-  summaryHtml = summaryHtml + '<tr><td>Total Number Of Bacteria</td><td>' + responseData.occurrenceData[0].bacteriaTotal + '</td></tr>';
-  var bacteriaPercentage = responseData.occurrenceData[0].bacteria/responseData.occurrenceData[0].bacteriaTotal * 100;
-  bacteriaPercentage = bacteriaPercentage.toFixed(3);
-  summaryHtml = summaryHtml + '<tr><td>Percentage of Bactera Without CRISPRs</td><td>' + bacteriaPercentage + '%</td></tr></table>';
-  document.getElementById("occurrenceTables").innerHTML = summaryHtml;
-
-
-  console.log(archaeaPercentage, bacteriaPercentage)
-  var chart = new CanvasJS.Chart("stackedChartContainer",
-    {
-      title:{
-      text: "CRISPR Occurrences In Genomes"
-      },
-      axisY: {
-        suffix: "%"
-      },
-      data: [
-      {
-        type: "stackedColumn100",
-        color: "#72aaff",
-        showInLegend: true,
-        name: "Percentage With CRISPRs",
-        dataPoints: [
-        {  y: 100 - archaeaPercentage, label: "Archaea"},
-        {  y: 100 - bacteriaPercentage, label: "Bacteria" },
-        ]
-      }, {
-        type: "stackedColumn100",
-        color: "#ff7072",
-        showInLegend: true,
-        name: "Percentage Without CRISPRs",
-        dataPoints: [
-        {  y: 1 - - archaeaPercentage, label: "Archaea"},
-        {  y: 1 - - bacteriaPercentage + 1, label: "Bacteria" }
-        ]
-      }
-
-      ]
-    });
-
-    chart.render();
 
 
 
 
 
+var openedArchaea = false, openedBacteria = false, openedBoth = false;
+var openedCurrent = false;
 
-
-
-  // then do a table that compares lengths?  either split into 2 or 1 big one
-
-  // largest
-  summaryHtml = '<h3>Largest Genomes</h3><table class="pure-table pure-table-horizontal" id="largestGenomeTable"';
-  summaryHtml = summaryHtml + '<tr><th>Genome Id</th><th>Organism Name</th><th>Genome Length</th><th>Domain</th></tr>';
-  summaryHtml = summaryHtml + '<tr><td>' + responseData.largestArchaea[0].genome_id + '</td><td>' + responseData.largestArchaea[0].organism_name + '</td><td>' + responseData.largestArchaea[0].genome_length + '</td><td>' + responseData.largestArchaea[0].domain + '</td></tr>';
-  summaryHtml = summaryHtml + '<tr><td>' + responseData.largestBacteria[0].genome_id + '</td><td>' + responseData.largestBacteria[0].organism_name + '</td><td>' + responseData.largestBacteria[0].genome_length + '</td><td>' + responseData.largestBacteria[0].domain + '</td></tr></table>';
-
-  // smallest
-  summaryHtml = summaryHtml + '<h3>Smallest Genomes</h3><table class="pure-table pure-table-horizontal" id="SmallestGenomeTable"';
-  summaryHtml = summaryHtml + '<tr><th>Genome Id</th><th>Organism Name</th><th>Genome Length</th><th>Domain</th></tr>';
-  summaryHtml = summaryHtml + '<tr><td>' + responseData.smallestArchaea[0].genome_id + '</td><td>' + responseData.smallestArchaea[0].organism_name + '</td><td>' + responseData.smallestArchaea[0].genome_length + '</td><td>' + responseData.smallestArchaea[0].domain + '</td></tr>';
-  summaryHtml = summaryHtml + '<tr><td>' + responseData.smallestBacteria[0].genome_id + '</td><td>' + responseData.smallestBacteria[0].organism_name + '</td><td>' + responseData.smallestBacteria[0].genome_length + '</td><td>' + responseData.smallestBacteria[0].domain + '</td></tr></table>';
-  document.getElementById("lengthTables").innerHTML = summaryHtml;
-}
-
-
-function openTab(evt, cityName) {
-    var i, tabcontent, tablinks;
+function openTab(evt, cityName, displayId) {
+    var i, tabcontent, tablinks, tmpstr;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
@@ -158,6 +35,61 @@ function openTab(evt, cityName) {
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    if (displayId == 1) {
+      tmpstr = "Archaea";
+      openedCurrent = openedArchaea;
+      openedArchaea = true;
+    } else if (displayId == 2) {
+      tmpstr = "Bacteria";
+      openedCurrent = openedBacteria;
+      openedBacteria = true;
+    } else if (displayId == 3) {
+      tmpstr = "Complete";
+      openedCurrent = openedBoth;
+      openedBoth = true;
+    }
+
+    if (!openedCurrent) {
+    var table = $('#' + tmpstr + "Table").DataTable({
+      serverSide: false,
+      processing: false,
+      lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      ajax: {
+          url: "/data?domain=" + tmpstr,
+          type: "POST",
+      },    
+      columns: [ 
+          { data : "genome_id" },
+          //{ data : "release_num" },
+          { data : "RefSeqAssembly_Accession" },
+          //{ data : "GenBankAssembly_Accession" },
+          { data: "RefSeq_Accession" },
+          //{ data : "RefSeqCategory" },        
+          { data : "taxId" },        
+          { data : "species_taxId" },
+          { data : "organism_name" },
+          //{ data : "infraspecific_name" },
+          //{ data : "isolate" },
+          { data : "genome_length" },
+          { data: "domain" },
+          //{ data : "fasta_file_name" }
+          { data: "crispr_count",
+            "render": function(data, type, row, meta){
+            
+            if(type === 'display' && data != 0){
+                var tmp = row.organism_name;
+                //tmp=tmp.replace(" ", "%20");
+                data = '<a href="/crispr.html?genome_id=' + row.genome_id + '&organism_name=' + tmp + '&display=' + displayId + '">' + data + '</a>';
+            }
+  
+            return data;
+            }
+          }
+  
+      ]     
+    }); 
+    }
   }
   
 
@@ -174,13 +106,8 @@ function openTab(evt, cityName) {
 
 
 
-
-
-
-
 // initialization
 document.getElementsByClassName('tablinks')[click].click()
-getSummaryTab();
 
 
 

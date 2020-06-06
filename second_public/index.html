@@ -12,6 +12,7 @@
 
 
   <script src="sdb_index.js" defer></script>
+  <script src="shared.js" defer></script>
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="shared.css">
 </head>
@@ -21,34 +22,88 @@
 <p></p>
 
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Introduction')">Introduction</button>
-  <button class="tablinks" onclick="openTab(event, 'Browse Data')">Browse Data</button>
-  <button class="tablinks" onclick="openTab(event, 'Summary')">Summary - Complete Genome</button>
-  <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+  <button class="tablinks" onclick="openTab(event, 'Introduction', 0)">Introduction</button>
+  <!--<button class="tablinks" onclick="openTab(event, 'Browse Data')">Browse Data</button>
+  -->
+
+  <div class="dropdown">
+    <button class="dropbtn">Browse Data</button>
+    <div class="dropdown-content">
+      <button class="dropdownbtn tablinks" onclick="openTab(event, 'Archaea', 1)">Archaea</button>
+      <button class="dropdownbtn tablinks" onclick="openTab(event, 'Bacteria', 2)">Bacteria</button>
+      <button class="dropdownbtn tablinks" onclick="openTab(event, 'Both', 3)">Both</button>
+    </div>
+  </div>
+
+  <!--<button class="tablinks" onclick="openTab(event, 'Summary', 0)">Summary</button>-->
+  <div class="dropdown">
+    <button class="dropbtn">Summary</button>
+    <div class="dropdown-content">
+      <button class="dropdownbtn tablinks" onclick="openTab(event, 'CRISPR Occurrences', 0)">CRISPR Occurrences</button>
+      <button class="dropdownbtn tablinks" onclick="openTab(event, 'Genome Lengths', 0)">Genome Lengths</button>
+    </div>
+  </div>
+
+  <button class="tablinks" onclick="openTab(event, 'Contact', 0)">Contact</button>
 </div>
 
-<div id="Introduction" class="tabcontent">
-  <br/>
-  <p>SCRISPRdb is a database that allows users to explore the CRISPRs in bacterial and archaeal genomes. &nbsp;&nbsp;For the new release of NCBI RefSeq database, we will download all completedly sequenced and assembled genomes of bacteria and archaea, and scan through them using our CRISPR detection pipeline called CRF (<u><i>C</i></u>RISPR Finder by <u><i>R</i></u>andom <u><i>F</i></u>orest) to detect all putatigve CRISPR candidates. &nbsp;&nbsp;Different from other CRISPR detection tools, a machine learning approache (<i>i.e.</i>, a random forest classifier) was adopted in CRF to filter out invalid CRISPR arrays from all putative candidates and thus enhanced detection accuracy. &nbsp;&nbsp;Also, CRF can filter out those candidates that are apparently tandem repeats to reduce false positive cases.</br> 
-</p>
- 
-<p>Using our highly interactive web interfaces, users can easily and efficiently search, navigate, visualize, examine and validate all  CRISPRs detected in bacterial and archaeal genomes. &nbsp;&nbsp;Moreover, SCRIPRdb provides overall statistical summary information for all CRISPRs, including their occurrences, abundances, size distribtions and repeat-spacer archetectures. &nbsp;&nbsp;This will facilitate better understanding of the origins, biogenesis mechanisms and biological relevances of CRISPRs naturally occurred in bacteria and archaea, benefiting the research community with potential new tools for better DNA and RNA editing and other bioengineering applications.</br>      
-</p>
+<div id="Introduction" class="tabcontent"></div>
 
-  <p>Current SCRISPRdb release: 1.0 (2020-06-10), which has 351 archaea and 17148 bacterias based on RefSeq Release 200 (2020-05-12). </br>
-</p>
+<div id="Archaea" class="tabcontent">
+  <h3 id="name">Database - Archaea</h1>
 
-  <h4>How to cite CRF</h4>
+    <table id="ArchaeaTable" class="display">
+        <thead>
+            <tr>
+                <th>genome_id</th>
+                <!--<th>release_num</th>-->
+                <th>RefSeqAssembly_Accession</th>
+                <!--<th>GenBankAssembly_Acession</th>-->
+                <th>RefSeq_Accession</th>
+                <!--<th>RefSeqCategory</th>-->
+                <th>taxId</th>
+                <th>species_taxId</th>
+                <th>organism_name</th>
+                <!--<th>infraspecific_name</th>-->
+                <!--<th>isolate</th>-->
+                <th>genome_length</th>
+                <th>domain</th>
+                <!--<th>fasta_file_name</th>-->
+                <th>crispr_count</th>
+            </tr>
+        </thead>
+    </table>
 
-<p> Kai Wang and Chun Liang​ (2017) CRF: detection of CRISPR arrays using random forest, <a href="https://peerj.com/articles/3219/">PeerJ 5:e3219</a></p>
-
-  <h4>How to cite SCRISPRdb</h4>
 </div>
+<div id="Bacteria" class="tabcontent">
+  <h3 id="name">Database - Bacteria</h1>
 
-<div id="Browse Data" class="tabcontent">
-  <h3 id="test">Database - wip</h1>
+    <table id="BacteriaTable" class="display">
+        <thead>
+            <tr>
+                <th>genome_id</th>
+                <!--<th>release_num</th>-->
+                <th>RefSeqAssembly_Accession</th>
+                <!--<th>GenBankAssembly_Acession</th>-->
+                <th>RefSeq_Accession</th>
+                <!--<th>RefSeqCategory</th>-->
+                <th>taxId</th>
+                <th>species_taxId</th>
+                <th>organism_name</th>
+                <!--<th>infraspecific_name</th>-->
+                <!--<th>isolate</th>-->
+                <th>genome_length</th>
+                <th>domain</th>
+                <!--<th>fasta_file_name</th>-->
+                <th>crispr_count</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div id="Both" class="tabcontent">
+  <h3 id="name">Database</h1>
 
-    <table id="table" class="display">
+    <table id="CompleteTable" class="display">
         <thead>
             <tr>
                 <th>genome_id</th>
@@ -71,18 +126,17 @@
     </table>
 </div>
 
-<div id="Summary", class="tabcontent">
-  <div id="stackedChartContainer" style="height: 500px;"></div>
-  <div id="occurrenceTables"></div>
-  <div id="lengthCharContainer"></div>
-  <div id="lengthTables"></div>
+<div id="CRISPR Occurrences" class="tabcontent">
+  <h3>Test</h3>
 </div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="Genome Lengths" class="tabcontent">
+  <h3>Test</h3>
 </div>
+
+<div id="Contact" class="tabcontent"></div>
   
 
 </body>
 </html> 
+          

@@ -7,6 +7,8 @@
 //    Date: 5/20/2020 - Present
 //
 //========================================================================================
+const ipAddress = '10.34.229.125'
+
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -24,34 +26,24 @@ function openTab(evt, cityName) {
 // initialization
 document.getElementsByClassName('tablinks')[1].click()
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var genome_id = urlParams.get('genome_id');
+var organism_name = urlParams.get('organism_name');
+var display = urlParams.get('display');
+console.log(genome_id, organism_name);
+document.getElementById("name").innerText = organism_name;
 
 
-var tmp2 = window.location.href;
-var secondIndex = tmp2.search("#")
-var tmp = "";
-var organism_name = "";
 
-if (secondIndex != -1) {
-    window.location.replace(window.location.href.substring(0, secondIndex));
-} else {
-    var index = tmp2.search("genome_id=");
-    var arr = tmp2.substr(index + 10).split("&");
-    tmp = arr[0];
-    index = arr[1].search("organism_name=");
-    organism_name = arr[1].substr(index + 14);
-    organism_name = organism_name.replace(/%20/gi, " ");
-    document.getElementById("name").innerText = organism_name;
-}
-
-
-if (isNumeric(tmp)) {
+if (isNumeric(genome_id)) {
 
     var table = $('#table').DataTable({
         serverSide: false,
         processing: false,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         ajax: {
-            url: "/crisprdata?genome_id=" + tmp,
+            url: "/crisprdata?genome_id=" + genome_id,
             type: "POST",
         },    
         columns: [ 
@@ -59,7 +51,7 @@ if (isNumeric(tmp)) {
                 "render": function(data, type, row, meta){
           
                 if(type === 'display'){
-                    data = "<a href=\"/individualcrispr.html?genome_id=" + tmp + "&crispr_id=" + row.id + "&organism_name=" + organism_name + "\">" + data + "</a>";
+                    data = "<a href=\"/individualcrispr.html?genome_id=" + genome_id + "&crispr_id=" + row.id + "&organism_name=" + organism_name + '&display=' + display + "\">" + data + "</a>";
                 }
       
                 return data;
@@ -69,7 +61,7 @@ if (isNumeric(tmp)) {
                 "render": function(data, type, row, meta){
           
                 if(type === 'display'){
-                    data = "<a href=\"/individualcrispr.html?genome_id=" + tmp + "&crispr_id=" + row.id + "&organism_name=" + organism_name + "\">" + data + "</a>";
+                    data = "<a href=\"/individualcrispr.html?genome_id=" + genome_id + "&crispr_id=" + row.id + "&organism_name=" + organism_name + '&display=' + display + "\">" + data + "</a>";
                 }
       
                 return data;
@@ -88,7 +80,7 @@ function isNumeric(num){
 }
 
 document.getElementById("back").addEventListener('click', ()=>{
-    window.location.href = "http://bioinfolab.miamioh.edu:8080?var=1";
+    window.location.href = "http://" + ipAddress + ":8080?var=" + display;
 }, 'false');
 
 

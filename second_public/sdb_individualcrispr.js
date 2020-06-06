@@ -1,3 +1,15 @@
+//========================================================================================
+//
+//    Name: sdb_individualcrispr.js
+//    Purpose: Client Sided code to access the SCRISPRdb, specifically CRISPR related
+//
+//    Author: Luke Liang
+//    Date: 5/20/2020 - Present
+//
+//========================================================================================
+
+const ipAddress = '10.34.229.125'
+
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -17,16 +29,13 @@ document.getElementsByClassName('tablinks')[1].click()
 
 
 
-var url = window.location.href;
-var variables = url.substr(url.search("genome_id=") + 10);
 
-// vital globals
-var genome_id = variables.substr(0, variables.search("\&"));
-
-variables = variables.substr(variables.search("crispr_id=") + 10);
-var crispr_id = variables.substr(0, variables.search("&"));
-var organism_name = variables.substr(variables.search("organism_name=") + 14);
-organism_name = organism_name.replace(/%20/gi, " ");
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var genome_id = urlParams.get('genome_id');
+var crispr_id = urlParams.get('crispr_id');
+var organism_name = urlParams.get('organism_name');
+var display = urlParams.get('display');
 
 document.getElementById("name").innerText = organism_name + " - CRISPR " + crispr_id;
 
@@ -35,7 +44,7 @@ function isNumeric(num){
 }
 
 document.getElementById("back").addEventListener('click', ()=>{
-    window.location.href = "http://bioinfolab.miamioh.edu:8080/crispr.html?genome_id=" + genome_id + "&organism_name=" + organism_name;
+    window.location.href = "http://" + ipAddress + ":8080/crispr.html?genome_id=" + genome_id + "&organism_name=" + organism_name + "&display=" + display;
 }, 'false');
 
 if (isNumeric(genome_id) && isNumeric(crispr_id)) {
