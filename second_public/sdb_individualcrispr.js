@@ -263,7 +263,6 @@ async function getCrisprData() {
         body: JSON.stringify(data),
     }
     //const response3 = await
-    var outside
 
 
     fetch('/api', options)
@@ -282,3 +281,4 @@ async function getCrisprData() {
     //finally add everything
     
 }
+

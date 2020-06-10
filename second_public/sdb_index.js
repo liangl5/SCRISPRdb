@@ -92,7 +92,7 @@ function openTab(evt, cityName, displayId) {
     }
   }
   
-
+  
 
 
 
@@ -108,6 +108,9 @@ function openTab(evt, cityName, displayId) {
 
 // initialization
 document.getElementsByClassName('tablinks')[click].click()
+if (click == 5) {
+  renderGraphs();
+}
 
 
 

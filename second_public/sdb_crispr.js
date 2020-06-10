@@ -84,8 +84,6 @@ document.getElementById("back").addEventListener('click', ()=>{
 }, 'false');
 
 
-
-
 // async function getCrisprData() {
 //     var type = 1;
 //     var genome_id = tmp

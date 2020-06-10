@@ -9,10 +9,13 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
-  <script src="sdb_index.js" defer></script>
+
   <script src="shared.js" defer></script>
+  <script src="sdb_index.js" defer></script>
+  
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="shared.css">
 </head>
@@ -40,7 +43,9 @@
     <button class="dropbtn">Summary</button>
     <div class="dropdown-content">
       <button class="dropdownbtn tablinks" onclick="openTab(event, 'CRISPR Occurrences', 0)">CRISPR Occurrences</button>
-      <button class="dropdownbtn tablinks" onclick="openTab(event, 'Genome Lengths', 0)">Genome Lengths</button>
+      <button id="LengthBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Genome Lengths', 0)">Genome Lengths</button>
+      <button id="SpacersBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Spacers', 0)">Spacers</button>
+      <button id="RepeatsBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Repeats', 0)">Repeats</button>
     </div>
   </div>
 
@@ -126,12 +131,26 @@
     </table>
 </div>
 
-<div id="CRISPR Occurrences" class="tabcontent">
-  <h3>Test</h3>
+<div id="CRISPR Occurrences" class="tabcontent"></div>
+
+<div id="Genome Lengths" class="tabcontent"></div>
+
+<div id="Spacers" class="tabcontent">
+  <div class="tab">
+    <button id = "ArchaeaSpacersBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaSpacers')">Archaea</button>
+    <button id = "BacteriaSpacersBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaSpacers')">Bacteria</button>
+  </div>
+  <div id = "ArchaeaSpacers" class = "tabcontent-2"></div>
+  <div id = "BacteriaSpacers" class = "tabcontent-2"></div>
 </div>
 
-<div id="Genome Lengths" class="tabcontent">
-  <h3>Test</h3>
+<div id="Repeats" class="tabcontent">
+  <div class="tab">
+    <button id = "ArchaeaRepeatsBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaRepeats')">Archaea</button>
+    <button id = "BacteriaRepeatsBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaRepeats')">Bacteria</button>
+  </div>
+  <div id = "ArchaeaRepeats" class = "tabcontent-2"></div>
+  <div id = "BacteriaRepeats" class = "tabcontent-2"></div>
 </div>
 
 <div id="Contact" class="tabcontent"></div>
