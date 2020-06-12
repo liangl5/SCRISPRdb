@@ -1,11 +1,70 @@
+:root {
+  --bg-color: #fff;
+  --lt-color: #eee;
+  --mid-color: #898A8A;
+  --prim-color: #12568A;
+  --acc-color: #5DB3F0;
+  --dark-color: #000;
+}
 
-body {font-family: Arial;}
+h2 {
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: var(--prim-color);
+  margin: 0 auto;
+  margin-top: 10px;
+  color: var(--lt-color);
+  padding-top: 35px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h3, h4 {color: var(--prim-color);}
+
+th {
+  color: var(--acc-color);
+}
+
+td:hover {
+  background: var(--acc-color);
+  color: var(--lt-color) !important;
+}
+
+
+tr:hover .sorting_1 {
+  background-color: var(--prim-color) !important;
+  color: var(--lt-color);
+}
+
+tr:hover {
+  background-color: var(--prim-color) !important;
+  color: var(--lt-color);
+}
+
+thead, thead:hover {
+  background-color: var(--prim-color);
+  color: var(--lt-color) !important;
+}
+a {
+  text-decoration: none;
+  /*color: var(--acc-color);*/
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--mid-color);
+}
+
+body {
+  font-family: Arial;
+  background-color: var(--lt-color);
+}
 
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: var(--mid-color);
 }
 
 /* Style the buttons inside the tab */
@@ -22,20 +81,25 @@ body {font-family: Arial;}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: var(--acc-color);
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: var(--acc-color);
 }
-
+.tablinks {
+  color: var(--lt-color);
+}
+.dropdownbtn {
+  color: var(--prim-color);
+}
 /* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
+  background-color: var(--bg-color);
 }
 
 #back {
@@ -53,34 +117,28 @@ body {font-family: Arial;}
   font-size: 16px;
   border: none;
   outline: none;
-  color: black;
+  color: var(--lt-color);
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
 }
+.dropdownbtn:hover {
+  color: var(--lt-color) !important;
+}
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--lt-color);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   max-width: 125px;
 }
 
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover #dropbtn {
-  background-color: lightgray;
-}
-
-.dropdownbtn {
-  width: 125px;
-}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover #dropbtn {background-color: var(--acc-color);}
+.dropdownbtn {width: 125px;}
 
 #stackedChartContainer {
   max-width: 500px;
@@ -93,17 +151,8 @@ body {font-family: Arial;}
   padding-left: 5px;
 }
 
-/* #BacteriaLengthChart {
-  width: 1500px;
-  height: 250px;
-}
-
-#ArchaeaLengthChart {
-  width: 1500px;
-  height: 250px;
-} */
-
 body {
   padding-left: 10px;
   padding-right: 10px;
 }
+

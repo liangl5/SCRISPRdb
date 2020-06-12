@@ -46,7 +46,7 @@
         <div class="dropdown">
             <button class="dropbtn">Summary</button>
             <div class="dropdown-content">
-              <button class="dropdownbtn tablinks" onclick="openTab(event, 'CRISPR Occurrences', 0)">CRISPR Occurrences</button>
+              <button id="CRISPROccurrenceId" class="dropdownbtn tablinks" onclick="openTab(event, 'CRISPR Occurrences', 0)">CRISPR Occurrences</button>
               <button id="LengthBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Genome Lengths', 0)">Genome Lengths</button>
               <button id="SpacersBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Spacers', 0)">Spacers</button>
               <button id="RepeatsBtn" class="dropdownbtn tablinks" onclick="openTab(event, 'Repeats', 0)">Repeats</button>
@@ -84,17 +84,17 @@
 
     <div id="Spacers" class="tabcontent">
         <div class="tab">
-          <button class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaSpacers')">Archaea</button>
-          <button class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaSpacers')">Bacteria</button>
+          <button id = "ArchaeaSpacersBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaSpacers')">Archaea</button>
+          <button id = "BacteriaSpacersBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaSpacers')">Bacteria</button>
         </div>
         <div id = "ArchaeaSpacers" class = "tabcontent-2"></div>
         <div id = "BacteriaSpacers" class = "tabcontent-2"></div>
-    </div>
+      </div>
       
-    <div id="Repeats" class="tabcontent">
+      <div id="Repeats" class="tabcontent">
         <div class="tab">
-          <button class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaRepeats')">Archaea</button>
-          <button class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaRepeats')">Bacteria</button>
+          <button id = "ArchaeaRepeatsBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'ArchaeaRepeats')">Archaea</button>
+          <button id = "BacteriaRepeatsBtn" class="tablinks-2" onclick="openSecondaryTab(event, 'BacteriaRepeats')">Bacteria</button>
         </div>
         <div id = "ArchaeaRepeats" class = "tabcontent-2"></div>
         <div id = "BacteriaRepeats" class = "tabcontent-2"></div>

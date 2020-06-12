@@ -55,7 +55,7 @@ document.getElementById("Introduction").innerHTML = introHtml;
 
 // summary
 
-var prelimHtml = '<div id="stackedChartContainer" style="height: 400px; width: 500px"></div>'
+var prelimHtml = '<div id="stackedChartContainer" style="height: 500px; width: 500px"></div>'
 prelimHtml = prelimHtml + '<div id="occurrenceTables"></div>'
 document.getElementById("CRISPR Occurrences").innerHTML = prelimHtml;
 
@@ -68,8 +68,11 @@ document.getElementById("Genome Lengths").innerHTML = prelimHtml;
 // Initialization
 getSummaryTab();
 resizeDropDown();
+document.getElementById("CRISPR Occurrences").style.paddingBottom = 200 + "px";
+
 // re-edits the drop down.  Sometimes visual bug doesn't display the header properly in time for resizeDropDown and the drop down will be higher than intended
 setTimeout(function(){ resizeDropDown(); }, 3000);
+
 
 
 // drop down styling
@@ -81,6 +84,7 @@ function resizeDropDown() {
     tmp[i].style.top = x.bottom + "px";
   }
 }
+
 
 
 async function getSummaryTab() {
@@ -116,39 +120,15 @@ async function getSummaryTab() {
     document.getElementById("occurrenceTables").innerHTML = summaryHtml;
   
     // occurrences chart
-    var chart = new CanvasJS.Chart("stackedChartContainer",
-      {
-        title:{
-        text: "CRISPR Occurrences In Genomes"
-        },
-        axisY: {
-          suffix: "%"
-        },
-        data: [
-        {
-          type: "stackedColumn100",
-          color: "#72aaff",
-          showInLegend: true,
-          name: "Percentage With CRISPRs",
-          dataPoints: [
-          {  y: 100 - archaeaPercentage, label: "Archaea"},
-          {  y: 100 - bacteriaPercentage, label: "Bacteria" },
-          ]
-        }, {
-          type: "stackedColumn100",
-          color: "#ff7072",
-          showInLegend: true,
-          name: "Percentage Without CRISPRs",
-          dataPoints: [
-          {  y: 1 - - archaeaPercentage, label: "Archaea"},
-          {  y: 1 - - bacteriaPercentage + 1, label: "Bacteria" }
-          ]
-        }
-  
-        ]
-    });
-  
-    chart.render();
+    var alreadyStackedGraph = false;
+    document.getElementById("CRISPROccurrenceId").addEventListener("click", ()=>{
+      if (!alreadyStackedGraph) {
+        drawStackedBarChart(responseData.occurrenceData[0].archaea, responseData.occurrenceData[0].archaeaTotal, responseData.occurrenceData[0].bacteria, responseData.occurrenceData[0].bacteriaTotal);
+        alreadyStackedGraph = true;
+      }
+    }, false);
+    
+   
   
   
     // largest table
@@ -190,16 +170,18 @@ async function getSummaryTab() {
   
     const polarOpposites = await fetch('/summarydata', options);
     const polarOppositesData = await polarOpposites.json();
+    console.log(polarOppositesData);
 
 
     // spacers
     var spacerHtml = '<div id="ArchaeaSpacerLengthChart"></div>';
     spacerHtml = spacerHtml + '<div id="ArchaeaSpacerCountChart"></div>';
-    spacerHtml = spacerHtml + '<div id="archaeaSpacerTable"><h3>Largest Average Length of Spacers in One Archaea CRISPR</h3><table class="pure-table pure-table-horizontal" id="archaeaSpacerLengthTable">'
-      spacerHtml = spacerHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.A_S_avg_length.genome_id + "</td><tr>"
-      spacerHtml = spacerHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.A_S_avg_length.crispr_id + "</td><tr>"
-      spacerHtml = spacerHtml + "<tr><th>Organism Name</th><td>" + polarOppositesData.A_S_avg_length.organism_name + "</v><tr>"
-      spacerHtml = spacerHtml + "<tr><th>Average Length Of Spacers</th><td>" + polarOppositesData.A_S_avg_length.size + "</td><tr>"
+    spacerHtml = spacerHtml + '<div id="archaeaSpacerTable"><h3>Average of Spacers in Archaea CRISPRs</h3><table class="pure-table pure-table-horizontal" id="archaeaSpacerLengthTable">'
+      spacerHtml = spacerHtml + "<tr><th>Median Length Of Spacers</th><td>" + polarOppositesData.A_S_avg_length.median.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Average Length Of Spacers</th><td>" + polarOppositesData.A_S_avg_length.length.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Median Count Of Spacers</th><td>" + polarOppositesData.A_S_count.median.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Average Count Of Spacers</th><td>" + polarOppositesData.A_S_count.length.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Number of Archaea CRISPRs</th><td>" + polarOppositesData.A_S_avg_length.total + "</td><tr>"
     spacerHtml = spacerHtml + '</table><h3>Largest Amount of Spacers in One Archaea CRISPR</h3><table class="pure-table pure-table-horizontal" id="archaeaSpacerCountTable">'
       spacerHtml = spacerHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.A_S_count.genome_id + "</td><tr>"
       spacerHtml = spacerHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.A_S_count.crispr_id + "</td><tr>"
@@ -211,11 +193,12 @@ async function getSummaryTab() {
 
     spacerHtml = '<div id="BacteriaSpacerLengthChart"></div>';
     spacerHtml = spacerHtml + '<div id="BacteriaSpacerCountChart"></div>';
-    spacerHtml = spacerHtml + '<div id="bacteriaSpacerTable"><h3>Largest Average Length of Spacers in One Bacteria CRISPR</h3><table class="pure-table pure-table-horizontal" id="bacteriaSpacerLengthTable">'
-      spacerHtml = spacerHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.B_S_avg_length.genome_id + "</td><tr>"
-      spacerHtml = spacerHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.B_S_avg_length.crispr_id + "</td><tr>"
-      spacerHtml = spacerHtml + "<tr><th>Organism Name</th><td>" + polarOppositesData.B_S_avg_length.organism_name + "</v><tr>"
-      spacerHtml = spacerHtml + "<tr><th>Average Length Of Spacers</th><td>" + polarOppositesData.B_S_avg_length.size + "</td><tr>"
+    spacerHtml = spacerHtml + '<div id="bacteriaSpacerTable"><h3 Average of Spacers in Bacteria CRISPRs</h3><table class="pure-table pure-table-horizontal" id="bacteriaSpacerLengthTable">'
+      spacerHtml = spacerHtml + "<tr><th>Median Length Of Spacers</th><td>" + polarOppositesData.B_S_avg_length.median.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Average Length Of Spacers</th><td>" + polarOppositesData.B_S_avg_length.length.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Median Count Of Spacers</th><td>" + polarOppositesData.B_S_count.median.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Average Count Of Spacers</th><td>" + polarOppositesData.B_S_count.length.toFixed(3) + "</td><tr>"
+      spacerHtml = spacerHtml + "<tr><th>Number of Bacteria CRISPRs</th><td>" + polarOppositesData.B_S_avg_length.total + "</td><tr>"
     spacerHtml = spacerHtml + '</table><h3>Largest Amount of Spacers in One Bacteria CRISPR</h3><table class="pure-table pure-table-horizontal" id="bacteriaSpacerCountTable">'
       spacerHtml = spacerHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.B_S_count.genome_id + "</td><tr>"
       spacerHtml = spacerHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.B_S_count.crispr_id + "</td><tr>"
@@ -231,11 +214,12 @@ async function getSummaryTab() {
     // repeats 
     var repeatHtml = '<div id="ArchaeaRepeatLengthChart"></div>';
     repeatHtml = repeatHtml + '<div id="ArchaeaRepeatCountChart"></div>';
-    repeatHtml = repeatHtml + '<div id="archaeaRepeatTable"><h3>Largest Average Length of Repeats in One Archaea CRISPR</h3><table class="pure-table pure-table-horizontal" id="archaeaRepeatLengthTable">'
-      repeatHtml = repeatHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.A_R_avg_length.genome_id + "</td><tr>"
-      repeatHtml = repeatHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.A_R_avg_length.crispr_id + "</td><tr>"
-      repeatHtml = repeatHtml + "<tr><th>Organism Name</th><td>" + polarOppositesData.A_R_avg_length.organism_name + "</v><tr>"
-      repeatHtml = repeatHtml + "<tr><th>Average Length Of Repeats</th><td>" + polarOppositesData.A_R_avg_length.size + "</td><tr>"
+    repeatHtml = repeatHtml + '<div id="archaeaRepeatTable"><h3>Average of Repeats in Archaea CRISPRs</h3><table class="pure-table pure-table-horizontal" id="archaeaRepeatLengthTable">'
+      repeatHtml = repeatHtml + "<tr><th>Median Length Of Repeats</th><td>" + polarOppositesData.A_R_avg_length.median.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Average Length Of Repeats</th><td>" + polarOppositesData.A_R_avg_length.length.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Median Count Of Repeats</th><td>" + polarOppositesData.A_R_count.median.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Average Count Of Repeats</th><td>" + polarOppositesData.A_R_count.length.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Number of Archaea CRISPRs</th><td>" + polarOppositesData.A_R_avg_length.total + "</td><tr>"
     repeatHtml = repeatHtml + '</table><h3>Largest Amount of Repeats in One Archaea CRISPR</h3><table class="pure-table pure-table-horizontal" id="archaeaRepeatCountTable">'
       repeatHtml = repeatHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.A_R_count.genome_id + "</td><tr>"
       repeatHtml = repeatHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.A_R_count.crispr_id + "</td><tr>"
@@ -246,11 +230,12 @@ async function getSummaryTab() {
 
     repeatHtml = '<div id="BacteriaRepeatLengthChart"></div>';
     repeatHtml = repeatHtml + '<div id="BacteriaRepeatCountChart"></div>';
-    repeatHtml = repeatHtml + '<div id="bacteriaRepeatTable"><h3>Largest Average Length of Repeats in One Bacteria CRISPR</h3><table class="pure-table pure-table-horizontal" id="bacteriaRepeatLengthTable">'
-      repeatHtml = repeatHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.B_R_avg_length.genome_id + "</td><tr>"
-      repeatHtml = repeatHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.B_R_avg_length.crispr_id + "</td><tr>"
-      repeatHtml = repeatHtml + "<tr><th>Organism Name</th><td>" + polarOppositesData.B_R_avg_length.organism_name + "</v><tr>"
-      repeatHtml = repeatHtml + "<tr><th>Average Length Of Repeats</th><td>" + polarOppositesData.B_R_avg_length.size + "</td><tr>"
+    repeatHtml = repeatHtml + '<div id="bacteriaRepeatTable"><h3>Average of Repeats in Bacteria CRISPRs</h3><table class="pure-table pure-table-horizontal" id="bacteriaRepeatLengthTable">'
+      repeatHtml = repeatHtml + "<tr><th>Median Length Of Repeats</th><td>" + polarOppositesData.B_R_avg_length.median.toFixed(3) + "</td><tr>"  
+      repeatHtml = repeatHtml + "<tr><th>Average Length Of Repeats</th><td>" + polarOppositesData.B_R_avg_length.length.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Median Count Of Repeats</th><td>" + polarOppositesData.B_R_count.median.toFixed(3) + "</td><tr>"  
+      repeatHtml = repeatHtml + "<tr><th>Average Count Of Repeats</th><td>" + polarOppositesData.B_R_count.length.toFixed(3) + "</td><tr>"
+      repeatHtml = repeatHtml + "<tr><th>Number of Bacteria CRISPRs</th><td>" + polarOppositesData.B_R_avg_length.total + "</td><tr>"
     repeatHtml = repeatHtml + '</table><h3>Largest Amount of Repeats in One Bacteria CRISPR</h3><table class="pure-table pure-table-horizontal" id="bacteriaRepeatCountTable">'
       repeatHtml = repeatHtml + "<tr><th>Genome Id</th><td>" + polarOppositesData.B_R_count.genome_id + "</td><tr>"
       repeatHtml = repeatHtml + "<tr><th>CRISPR Id</th><td>" + polarOppositesData.B_R_count.crispr_id + "</td><tr>"
@@ -263,43 +248,62 @@ async function getSummaryTab() {
     var alreadyArchaeaSpacers = false;
     document.getElementById("ArchaeaSpacersBtn").addEventListener("click", ()=>{
       if (!alreadyArchaeaSpacers) {
+        console.log("already loaded archaea spacers");
+
         renderRepeatAndSpacerGraphs("Archaea", "Spacer");
         alreadyArchaeaSpacers = true;
-      } else {
-        console.log("already loaded archaea spacers");
       }
     }, false);
 
     var alreadyBacteriaSpacers = false;
     document.getElementById("BacteriaSpacersBtn").addEventListener("click", ()=>{
       if (!alreadyBacteriaSpacers) {
+        console.log("already loaded bacteria spacers");
         renderRepeatAndSpacerGraphs("Bacteria", "Spacer");
         alreadyBacteriaSpacers = true;
-      } else {
-        console.log("already loaded bacteria spacers");
       }
     }, false);
 
     var alreadyArchaeaRepeats = false;
     document.getElementById("ArchaeaRepeatsBtn").addEventListener("click", ()=>{
       if (!alreadyArchaeaRepeats) {
+        console.log("already loaded archaea repeats");
         renderRepeatAndSpacerGraphs("Archaea", "Repeat");
         alreadyArchaeaRepeats = true;
-      } else {
-        console.log("already loaded archaea repeats");
       }
     }, false);
 
     var alreadyBacteriaRepeats = false;
     document.getElementById("BacteriaRepeatsBtn").addEventListener("click", ()=>{
       if (!alreadyBacteriaRepeats) {
+        console.log("already loaded bacteria Repeats");
         renderRepeatAndSpacerGraphs("Bacteria", "Repeat");
         alreadyBacteriaRepeats = true;
-      } else {
-        console.log("already loaded bacteria Repeats");
       }
     }, false);
     
+}
+
+function drawStackedBarChart(archaea, archaeaTotal, bacteria, bacteriaTotal) {
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Domain', 'Percent With CRISPRs', 'Percent Without CRISPRs'],
+      ['Archaea', archaeaTotal - archaea, archaea],
+      ['Bacteria', bacteriaTotal - bacteria, bacteria]
+    ]);
+
+    var options_fullStacked = {
+      isStacked: 'percent',
+      width: 500,
+      legend: {position: 'top'},
+
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById("stackedChartContainer"));
+    chart.draw(data, options_fullStacked);
+  }
 }
 
 
@@ -318,29 +322,71 @@ async function renderRepeatAndSpacerGraphs(reqDomain, reqType) {
   
   const summaryLast2Reponse = await fetch('/summarydata', options);
   const summaryLast2Data = await summaryLast2Reponse.json();
-  
 
   var count = [];
   var length = [];
-  count.push(["Occurrences"]);
-  length.push(["Lengths"]);
 
-  for (var i = 0; i < summaryLast2Data.length; i++) {
-    if (reqType == "Spacers") {
-      count.push([summaryLast2Data[i].spacer_count]);
-      length.push([summaryLast2Data[i].spacer_length]);
-    } else {
-      count.push([summaryLast2Data[i].repeat_count]);
-      length.push([summaryLast2Data[i].repeat_length]);
+  if (reqDomain == "Bacteria") {
+    count.push(["Range", "Number of CRISPRs"]);
+    length.push(["Range", "Number of CRISPRs"]);
+
+    console.log(summaryLast2Data);
+    for (var i = 0; i < summaryLast2Data.lengthCategoryNames.length; i++) {
+      if (reqType == "Spacer") {
+        console.log("requested spacers");
+        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][1]])
+
+        
+      } else {
+        console.log("requested repeats")
+        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][0]]) 
+      }
+      
     }
-  }
-  console.log(count, length);
+    console.log(length);
+    //createColumnChart(count, reqDomain + reqType + "CountChart", reqDomain + " " + reqType + " Occurrence Distribution", "Number of CRISPRs", reqType + " Occurrence Count");
+    createColumnChart(length, reqDomain + reqType + "LengthChart", reqDomain + " " + reqType + " Average Length Distribution", "Number of CRISPRs", reqType + " Average Length");
+  } else {
+
+    count.push(["Occurrences"]);
+    length.push(["Lengths"]);
+
+    for (var i = 0; i < summaryLast2Data.length; i++) {
+      if (reqType == "Spacer") {
+        count.push([summaryLast2Data[i].spacer_count]);
+        length.push([summaryLast2Data[i].spacer_length]);
+      } else {
+        count.push([summaryLast2Data[i].repeat_count]);
+        length.push([summaryLast2Data[i].repeat_length]);
+      }
+    }
   // createHistogram(archaeaCreationArr, "ArchaeaLengthChart", "Archaea Genome Length Distribution", "Number of Genomes", "Genome Length");
-  createHistogram(count, reqDomain + reqType + "CountChart", reqDomain + " " + reqType + " Occurrence Distribution", "Number of CRISPRs", reqType + " Occurrence Count");
-  createHistogram(length, reqDomain + reqType + "LengthChart", reqDomain + " " + reqType + " Average Length Distribution", "Number of CRISPRs", reqType + " Average Length");
+    createHistogram(count, reqDomain + reqType + "CountChart", reqDomain + " " + reqType + " Occurrence Distribution", "Number of CRISPRs", reqType + " Occurrence Count", 12);
+    createHistogram(length, reqDomain + reqType + "LengthChart", reqDomain + " " + reqType + " Average Length Distribution", "Number of CRISPRs", reqType + " Average Length", 12);
+  }
 }
 
-function createHistogram(creationArr, documentId, title, yTitle, xTitle) {
+function createColumnChart(creationArr, documentId, title, yTitle, xTitle) {
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(creationArr);
+
+    var options = {
+      title: title,
+      legend: { position: 'none' },
+      vAxis: { title: xTitle , format: '0', textPosition: 'none'},
+      hAxis: { title: yTitle, format: 'short' },
+      width: 1296,
+      height: 200
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById(documentId));
+    chart.draw(data, options);
+  }
+}
+
+function createHistogram(creationArr, documentId, title, yTitle, xTitle, percentile) {
 
   google.charts.load("current", {packages:["corechart"]});
   google.charts.setOnLoadCallback(drawChart);
@@ -350,10 +396,12 @@ function createHistogram(creationArr, documentId, title, yTitle, xTitle) {
     var options = {
       title: title,
       legend: { position: 'none' },
-      vAxis: { title: xTitle , format: '#' },
+      vAxis: { title: xTitle , format: '0', textPosition: 'none'},
       hAxis: { title: yTitle, format: 'short' },
       width: 1296,
-      height: 200
+      height: 200,
+      histogram: { lastBucketPercentile: percentile},
+      gridlines: {count: -1}
     };
 
     var chart = new google.visualization.Histogram(document.getElementById(documentId));
@@ -399,7 +447,7 @@ async function renderGraphs () {
     bacteriaCreationArr.push([bacteriaData.data[i].genome_length]);
   }
 
-  console.log(archaeaCreationArr, bacteriaCreationArr);
-  createHistogram(archaeaCreationArr, "ArchaeaLengthChart", "Archaea Genome Length Distribution", "Number of Genomes", "Genome Length");
-  createHistogram(bacteriaCreationArr, "BacteriaLengthChart", "Bacteria Genome Length Distribution", "", "Genome Length");
+  createHistogram(archaeaCreationArr, "ArchaeaLengthChart", "Archaea Genome Length Distribution", "Number of Genomes", "Genome Length", 10);
+  createHistogram(bacteriaCreationArr, "BacteriaLengthChart", "Bacteria Genome Length Distribution", "", "Genome Length", 10);
 }
+
