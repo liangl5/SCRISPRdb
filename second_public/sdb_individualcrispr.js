@@ -47,9 +47,58 @@ document.getElementById("back").addEventListener('click', ()=>{
     window.location.href = "http://" + ipAddress + ":8080/crispr.html?genome_id=" + genome_id + "&organism_name=" + organism_name + "&display=" + display;
 }, 'false');
 
+document.getElementById("downloadSpacer").addEventListener("click", () => {
+    downloadFile("spacer", genome_id, crispr_id);
+}, false);
+document.getElementById("downloadFullCrisprNoFormat").addEventListener("click", () => {
+    downloadFile("fullcrispr", genome_id, crispr_id);
+}, false);
+document.getElementById("downloadFullCrisprFormat").addEventListener("click", () => {
+    downloadFile("fullcrisprformat", genome_id, crispr_id);
+}, false);
+
 if (isNumeric(genome_id) && isNumeric(crispr_id)) {
     getCrisprData();
 }
+
+function download(data, filename, type) {
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);  
+        }, 0); 
+    }
+}
+
+async function downloadFile(category, genome_id, crispr_id) {
+    var data = {
+        type: 5,
+        genome_id: genome_id,
+        crispr_id: crispr_id,
+        category: category
+    };
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }
+
+    const response = await fetch('/api', options);
+    const responseData = await response.json();
+    download(responseData.data, organism_name + "_" + category + ".txt", 'plain/txt');
+}
+
 async function getCrisprData() {
     var type = 1;
     var data = {type, genome_id, crispr_id};

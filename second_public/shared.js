@@ -170,7 +170,6 @@ async function getSummaryTab() {
   
     const polarOpposites = await fetch('/summarydata', options);
     const polarOppositesData = await polarOpposites.json();
-    console.log(polarOppositesData);
 
 
     // spacers
@@ -248,7 +247,7 @@ async function getSummaryTab() {
     var alreadyArchaeaSpacers = false;
     document.getElementById("ArchaeaSpacersBtn").addEventListener("click", ()=>{
       if (!alreadyArchaeaSpacers) {
-        console.log("already loaded archaea spacers");
+        console.log("loading archaea spacers");
 
         renderRepeatAndSpacerGraphs("Archaea", "Spacer");
         alreadyArchaeaSpacers = true;
@@ -258,7 +257,7 @@ async function getSummaryTab() {
     var alreadyBacteriaSpacers = false;
     document.getElementById("BacteriaSpacersBtn").addEventListener("click", ()=>{
       if (!alreadyBacteriaSpacers) {
-        console.log("already loaded bacteria spacers");
+        console.log("loading bacteria spacers");
         renderRepeatAndSpacerGraphs("Bacteria", "Spacer");
         alreadyBacteriaSpacers = true;
       }
@@ -267,7 +266,7 @@ async function getSummaryTab() {
     var alreadyArchaeaRepeats = false;
     document.getElementById("ArchaeaRepeatsBtn").addEventListener("click", ()=>{
       if (!alreadyArchaeaRepeats) {
-        console.log("already loaded archaea repeats");
+        console.log("loading archaea repeats");
         renderRepeatAndSpacerGraphs("Archaea", "Repeat");
         alreadyArchaeaRepeats = true;
       }
@@ -276,7 +275,7 @@ async function getSummaryTab() {
     var alreadyBacteriaRepeats = false;
     document.getElementById("BacteriaRepeatsBtn").addEventListener("click", ()=>{
       if (!alreadyBacteriaRepeats) {
-        console.log("already loaded bacteria Repeats");
+        console.log("loading bacteria Repeats");
         renderRepeatAndSpacerGraphs("Bacteria", "Repeat");
         alreadyBacteriaRepeats = true;
       }
@@ -330,21 +329,21 @@ async function renderRepeatAndSpacerGraphs(reqDomain, reqType) {
     count.push(["Range", "Number of CRISPRs"]);
     length.push(["Range", "Number of CRISPRs"]);
 
-    console.log(summaryLast2Data);
     for (var i = 0; i < summaryLast2Data.lengthCategoryNames.length; i++) {
       if (reqType == "Spacer") {
-        console.log("requested spacers");
-        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][1]])
-
-        
+        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][1]]);
       } else {
-        console.log("requested repeats")
-        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][0]]) 
+        length.push([summaryLast2Data.lengthCategoryNames[i], summaryLast2Data.lengthCategories[i][0]]);
       }
-      
     }
-    console.log(length);
-    //createColumnChart(count, reqDomain + reqType + "CountChart", reqDomain + " " + reqType + " Occurrence Distribution", "Number of CRISPRs", reqType + " Occurrence Count");
+    for (var i = 0; i < summaryLast2Data.countCategoryNames.length; i++) {
+      if (reqType == "Spacer") {
+        count.push([summaryLast2Data.countCategoryNames[i], summaryLast2Data.countCategories[i][1]]);
+      } else {
+        count.push([summaryLast2Data.countCategoryNames[i], summaryLast2Data.countCategories[i][0]]);
+      }
+    }
+    createColumnChart(count, reqDomain + reqType + "CountChart", reqDomain + " " + reqType + " Occurrence Distribution", "Number of CRISPRs", reqType + " Occurrence Count");
     createColumnChart(length, reqDomain + reqType + "LengthChart", reqDomain + " " + reqType + " Average Length Distribution", "Number of CRISPRs", reqType + " Average Length");
   } else {
 
