@@ -59,15 +59,45 @@ function openTab(evt, cityName, displayId) {
           url: "/data?domain=" + tmpstr,
           type: "POST",
       },    
+      "columnDefs": [
+        { "width": "2%", "targets": 0 }
+      ],
       columns: [ 
-          { data : "genome_id" },
+          { data : "genome_id"},
           //{ data : "release_num" },
           { data : "RefSeqAssembly_Accession" },
           //{ data : "GenBankAssembly_Accession" },
-          { data: "RefSeq_Accession" },
+          { data: "RefSeq_Accession", 
+            "render": function(data, type, row, meta){
+            
+              if(type === 'display'){
+                data = '<a href="https://www.ncbi.nlm.nih.gov/nuccore/' + data + '" target="_blank">' + data + '</a>';
+              }
+  
+              return data;
+            }
+          },
           //{ data : "RefSeqCategory" },        
-          { data : "taxId" },        
-          { data : "species_taxId" },
+          { data : "taxId",
+            "render": function(data, type, row, meta){
+            
+            if(type === 'display'){
+              data = '<a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=' + data + '" target="_blank">' + data + '</a>';
+            }
+
+            return data;
+            }
+          },        
+          { data : "species_taxId",
+            "render": function(data, type, row, meta){
+            
+            if(type === 'display'){
+              data = '<a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=' + data + '" target="_blank">' + data + '</a>';
+            }
+
+            return data;
+            }
+          },
           { data : "organism_name" },
           //{ data : "infraspecific_name" },
           //{ data : "isolate" },
@@ -76,14 +106,13 @@ function openTab(evt, cityName, displayId) {
           //{ data : "fasta_file_name" }
           { data: "crispr_count",
             "render": function(data, type, row, meta){
-            
-            if(type === 'display' && data != 0){
+              if(type === 'display' && data != 0){
                 var tmp = row.organism_name;
                 //tmp=tmp.replace(" ", "%20");
                 data = '<a href="/crispr.html?genome_id=' + row.genome_id + '&organism_name=' + tmp + '&display=' + displayId + '">' + data + '</a>';
-            }
+              }
   
-            return data;
+              return data;
             }
           }
   
