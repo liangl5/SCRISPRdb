@@ -18,23 +18,24 @@ function openSecondaryTab(evt, divId) {
     }
     tablinks = document.getElementsByClassName("tablinks-2");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      console.log(tablinks[i]);
+      tablinks[i].checked = false;
     }
     document.getElementById(divId).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(divId + "Btn").checked = true;
 }
 document.getElementById("SpacersBtn").addEventListener("click", ()=>{
-  document.getElementsByClassName('tablinks-2')[0].click()
+  document.getElementById("ArchaeaSpacersBtn").click();
 }, false);
 document.getElementById("RepeatsBtn").addEventListener("click", ()=>{
-  document.getElementsByClassName('tablinks-2')[2].click()
+  document.getElementById("ArchaeaRepeatsBtn").click();
 }, false);
 
 
 
 
 // introduction
-var introHtml = "<br/>"
+var introHtml = "<h3>Introduction</h3>"
 introHtml = introHtml + "<p>SCRISPRdb is a database that allows users to explore the CRISPRs in bacterial and archaeal genomes. &nbsp;&nbsp;For the new release of NCBI RefSeq database, we will download all completedly sequenced and assembled genomes of bacteria and archaea, and scan through them using our CRISPR detection pipeline called CRF (<u><i>C</i></u>RISPR Finder by <u><i>R</i></u>andom <u><i>F</i></u>orest) to detect all putatigve CRISPR candidates. &nbsp;&nbsp;Different from other CRISPR detection tools, a machine learning approache (<i>i.e.</i>, a random forest classifier) was adopted in CRF to filter out invalid CRISPR arrays from all putative candidates and thus enhanced detection accuracy. &nbsp;&nbsp;Also, CRF can filter out those candidates that are apparently tandem repeats to reduce false positive cases.</br>"
 introHtml = introHtml + '</p>'
 
@@ -48,13 +49,13 @@ introHtml = introHtml + '<h4>How to cite CRF</h4>'
 
 introHtml = introHtml + '<p> Kai Wang and Chun Liang​ (2017) CRF: detection of CRISPR arrays using random forest, <a href="https://peerj.com/articles/3219/">PeerJ 5:e3219</a></p>'
 introHtml = introHtml + '<h4>How to cite SCRISPRdb</h4>'
+introHtml = introHtml + 'Kai Wang, Luke Liang, and Chun Liang (2020) SCRISPRdb: a CRISPRs database with sequence secondary structure and the relationship between the spacers and viruses/plasmids, (Under Review)</p>'
 
 
 document.getElementById("Introduction").innerHTML = introHtml;
 
 
 // summary
-
 var prelimHtml = '<div id="stackedChartContainer" style="height: 500px; width: 500px"></div>'
 prelimHtml = prelimHtml + '<div id="occurrenceTables"></div>'
 document.getElementById("CRISPR Occurrences").innerHTML = prelimHtml;
@@ -65,8 +66,27 @@ prelimHtml = prelimHtml + '<div id="ArchaeaLengthChart"></div>';
 prelimHtml = prelimHtml + '<div id="lengthTables"></div>'
 document.getElementById("Genome Lengths").innerHTML = prelimHtml;
 
+
+// contact
+var contactHtml = "<h3>Contact</h3>";
+contactHtml = contactHtml + "<li>Luke Liang (liangl5@miamioh.edu) <br/><br/>";
+contactHtml = contactHtml + "Luke is a junior in Talawanda High School, Oxford, Ohio. His major contribtion includes database design and implementation using MySQL, bioinformatics pipeline development using Python, and web interfaces development using Node.js, HTML, CSS, etc.<br/><br/></li>";
+contactHtml = contactHtml + "<li>Kai Wang (wangk4@miamioh.edu) <br/><br/>";
+contactHtml = contactHtml + "As the developer of CRF pipeline, Kai designed and implemented the original web interfaces using PHP and Perl. In 2019, he graduated and finished his PhD in Miami University. Since then, he has been a postdoc in Michigan State University.<br/><br/></li>";
+document.getElementById("Contact").innerHTML = contactHtml;
+
+// download
+var downloadHtml = "<h3>Download</h3>";
+downloadHtml = downloadHtml + "Single genome download: CRISPR spacers and whole CRISPR sequences for individual genomes can be downloaded through Browse Data Tab <br/><br/>Batch download: CRISPR spacers and whole CRISPR sequences for all genomes can be downloaded here: <br/><br/>";
+downloadHtml = downloadHtml + '<li><a id="Archaea_Crispr" href="./data/Archaea_Crispr.fasta" download="Archaea_Crispr.fasta">Archaea Crispr Fasta</a></li><br>';
+downloadHtml = downloadHtml + '<li><a id="Archaea_Spacer" href="./data/Archaea_Spacer.fasta" download="Archaea_Spacer.fasta">Archaea Spacer Fasta</a></li><br>';
+downloadHtml = downloadHtml + '<li><a id="Bacteria_Crispr" href="./data/Bacteria_Crispr.fasta" download="Bacteria_Crispr.fasta">Bacteria Crispr Fasta</a></li><br>';
+downloadHtml = downloadHtml + '<li><a id="Bacteria_Spacer" href="./data/Bacteria_Spacer.fasta" download="Bacteria_Spacer.fasta">Bacteria Spacer Fasta</a></li><br>';
+document.getElementById("Download").innerHTML = downloadHtml;
+
 // Initialization
 getSummaryTab();
+//getDownloadTab();
 resizeDropDown();
 document.getElementById("CRISPR Occurrences").style.paddingBottom = 200 + "px";
 
@@ -450,3 +470,30 @@ async function renderGraphs () {
   createHistogram(bacteriaCreationArr, "BacteriaLengthChart", "Bacteria Genome Length Distribution", "", "Genome Length", 10);
 }
 
+
+
+// function getDownloadTab() {
+//     downloadTabFile("Archaea_Crispr");
+//     downloadTabFile("Archaea_Spacer");
+//     downloadTabFile("Bacteria_Crispr");
+//     downloadTabFile("Bacteria_Spacer");
+// }
+
+// async function downloadTabFile(fileName) {
+//   var type = 6;
+//   var data = {type, fileName};
+//   var options = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(data)
+//   };
+
+//   fetch('/api', options)
+//   .then(response => response.blob())
+//   .then(function(myBlob) {
+//     var url = window.URL.createObjectURL(myBlob);
+//     document.getElementById(fileName).href = url;
+//   });
+// }

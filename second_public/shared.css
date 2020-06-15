@@ -160,3 +160,14 @@ body {
   padding-bottom: 10px;
 }
 
+.radioButtonArea {
+  padding: 10px;
+}
+
+#BacteriaSpacersBtn {
+  margin-left: 20px;
+}
+
+#BacteriaRepeatsBtn {
+  margin-left: 20px;
+}

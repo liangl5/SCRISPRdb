@@ -61,8 +61,7 @@ if (isNumeric(genome_id) && isNumeric(crispr_id)) {
     getCrisprData();
 }
 
-function download(data, filename, type) {
-    var file = new Blob([data], {type: type});
+function download(file, filename) {
     if (window.navigator.msSaveOrOpenBlob) // IE10+
         window.navigator.msSaveOrOpenBlob(file, filename);
     else { // Others
@@ -80,6 +79,7 @@ function download(data, filename, type) {
 }
 
 async function downloadFile(category, genome_id, crispr_id) {
+    console.log("working");
     var data = {
         type: 5,
         genome_id: genome_id,
@@ -95,8 +95,8 @@ async function downloadFile(category, genome_id, crispr_id) {
     }
 
     const response = await fetch('/api', options);
-    const responseData = await response.json();
-    download(responseData.data, organism_name + "_" + category + ".txt", 'plain/txt');
+    const responseData = await response.blob();
+    download(responseData, organism_name + "_crispr_" + crispr_id + "_" + category + ".txt")
 }
 
 async function getCrisprData() {
