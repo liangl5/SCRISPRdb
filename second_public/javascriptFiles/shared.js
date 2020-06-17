@@ -18,7 +18,6 @@ function openSecondaryTab(evt, divId) {
     }
     tablinks = document.getElementsByClassName("tablinks-2");
     for (i = 0; i < tablinks.length; i++) {
-      console.log(tablinks[i]);
       tablinks[i].checked = false;
     }
     document.getElementById(divId).style.display = "block";
@@ -68,11 +67,12 @@ document.getElementById("Genome Lengths").innerHTML = prelimHtml;
 
 
 // contact
-var contactHtml = "<h3>Contact</h3>";
+var contactHtml = "<div id=\"contactHtml\"><h3>Contact</h3>";
 contactHtml = contactHtml + "<li>Luke Liang (liangl5@miamioh.edu) <br/><br/>";
-contactHtml = contactHtml + "Luke is a junior in Talawanda High School, Oxford, Ohio. His major contribtion includes database design and implementation using MySQL, bioinformatics pipeline development using Python, and web interfaces development using Node.js, HTML, CSS, etc.<br/><br/></li>";
+contactHtml = contactHtml + "Luke is a junior in Talawanda High School, Oxford, Ohio. His major contribtion includes database design and implementation using MySQL, bioinformatics pipeline development using Python, and web interfaces development using Node.js, HTML, CSS, etc.<br/><br/><br/></li>";
 contactHtml = contactHtml + "<li>Kai Wang (wangk4@miamioh.edu) <br/><br/>";
-contactHtml = contactHtml + "As the developer of CRF pipeline, Kai designed and implemented the original web interfaces using PHP and Perl. In 2019, he graduated and finished his PhD in Miami University. Since then, he has been a postdoc in Michigan State University.<br/><br/></li>";
+contactHtml = contactHtml + "As the developer of CRF pipeline, Kai designed and implemented the original web interfaces using PHP and Perl. Currently he is a postdoc in Michigan State University.<br/><br/><br/></li>";
+contactHtml = contactHtml + "<li>Chun Liang (liangc@miamioh.edu, Lab Director) <br/><br/></div>";
 document.getElementById("Contact").innerHTML = contactHtml;
 
 // download

@@ -1,0 +1,356 @@
+BLASTN 2.6.0+
+
+
+Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
+Miller (2000), "A greedy algorithm for aligning DNA sequences", J
+Comput Biol 2000; 7(1-2):203-14.
+
+
+
+Database: refseq.200.viral.genomic.fna
+           12,194 sequences; 318,032,494 total letters
+
+
+
+Query= NC_014222.1|CRISPR_2|SPACER_1
+
+Length=38
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NC_030925.1  Bacillus phage Shbh1, complete genome                    33.4    0.54 
+NC_016571.1  Pseudomonas phage OBP, complete genome                   31.5    2.1  
+NC_001338.1  Sulfolobus virus 1 complete genome (provirus)            31.5    2.1  
+NC_019526.1  Enterobacteria phage vB_KleM-RaK2, complete genome       31.5    2.1  
+NC_027399.1  Klebsiella phage K64-1 DNA, complete genome              31.5    2.1  
+NC_041916.1  Vibrio phage pTD1 DNA, complete genome                   29.5    7.8  
+NC_015464.1  Campylobacter phage NCTC12673, complete genome           29.5    7.8  
+NC_002188.1  Fowlpox virus, complete genome                           29.5    7.8  
+NC_024450.1  Falconid herpesvirus 1 strain S-18, complete genome      29.5    7.8  
+NC_031909.1  Campylobacter phage PC14, complete genome                29.5    7.8  
+NC_031120.1  Erwinia phage vB_EamM_Caitlin, complete genome           29.5    7.8  
+NC_034266.1  Columbid alphaherpesvirus 1 strain HLJ, complete genome  29.5    7.8  
+NC_028663.1  Cyanophage P-TIM40, complete genome                      29.5    7.8  
+NC_029692.1  Brazilian marseillevirus strain BH2014, complete genome  29.5    7.8  
+NC_044939.1  Heliothis virescens ascovirus 3g, complete genome        29.5    7.8  
+NC_009240.1  Gryllus bimaculatus nudivirus, complete genome           29.5    7.8  
+NC_028883.1  Clostridium phage phiMMP01, complete genome              29.5    7.8  
+NC_028905.1  Clostridium phage phiCD111, complete genome              29.5    7.8  
+NC_011398.1  Clostridium phage phiCD27, complete genome               29.5    7.8  
+NC_009233.1  Heliothis virescens ascovirus 3e, complete genome        29.5    7.8  
+NC_032558.1  Beihai rhabdo-like virus 2 strain BHTSS7258 hypothet...  29.5    7.8  
+NC_031927.1  Synechococcus phage S-CAM7 isolate 0910CC49, complet...  29.5    7.8  
+NC_031922.1  Synechococcus phage S-CAM9 isolate 1109NB16, complet...  29.5    7.8  
+NC_028996.1  Clostridium phage phiCDHM19, complete genome             29.5    7.8  
+
+
+>NC_030925.1 Bacillus phage Shbh1, complete genome
+Length=138081
+
+ Score = 33.4 bits (17),  Expect = 0.54
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Minus
+
+Query  15     TAGGGATAGAAACGATAGAA  34
+              |||||||||||||||| |||
+Sbjct  33475  TAGGGATAGAAACGATTGAA  33456
+
+
+>NC_016571.1 Pseudomonas phage OBP, complete genome
+Length=284757
+
+ Score = 31.5 bits (16),  Expect = 2.1
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  18      GGATAGAAACGATAGA  33
+               ||||||||||||||||
+Sbjct  126290  GGATAGAAACGATAGA  126305
+
+
+>NC_001338.1 Sulfolobus virus 1 complete genome (provirus)
+Length=15465
+
+ Score = 31.5 bits (16),  Expect = 2.1
+ Identities = 20/22 (91%), Gaps = 0/22 (0%)
+ Strand=Plus/Plus
+
+Query  1      GGTAGGAGAAATGATAGGGATA  22
+              ||||| ||| ||||||||||||
+Sbjct  13806  GGTAGAAGAGATGATAGGGATA  13827
+
+
+>NC_019526.1 Enterobacteria phage vB_KleM-RaK2, complete genome
+Length=345809
+
+ Score = 31.5 bits (16),  Expect = 2.1
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  4       AGGAGAAATGATAGGGATA  22
+               ||||||||||||| |||||
+Sbjct  101005  AGGAGAAATGATAAGGATA  101023
+
+
+>NC_027399.1 Klebsiella phage K64-1 DNA, complete genome
+Length=346602
+
+ Score = 31.5 bits (16),  Expect = 2.1
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  4       AGGAGAAATGATAGGGATA  22
+               ||||||||||||| |||||
+Sbjct  100950  AGGAGAAATGATAAGGATA  100968
+
+
+>NC_041916.1 Vibrio phage pTD1 DNA, complete genome
+Length=239276
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  11      ATGATAGGGATAGAAACGATA  31
+               ||| ||| |||||||||||||
+Sbjct  150814  ATGGTAGTGATAGAAACGATA  150794
+
+
+>NC_015464.1 Campylobacter phage NCTC12673, complete genome
+Length=135041
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  7      AGAAATGATAGGGATAGA  24
+              |||||||||||||| |||
+Sbjct  85030  AGAAATGATAGGGAAAGA  85013
+
+
+>NC_002188.1 Fowlpox virus, complete genome
+Length=288539
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  19     GATAGAAACGATAGAAAC  36
+              |||||| |||||||||||
+Sbjct  63580  GATAGATACGATAGAAAC  63563
+
+
+>NC_024450.1 Falconid herpesvirus 1 strain S-18, complete genome
+Length=204054
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7     AGAAATGATAGGGAT  21
+             |||||||||||||||
+Sbjct  9296  AGAAATGATAGGGAT  9282
+
+
+>NC_031909.1 Campylobacter phage PC14, complete genome
+Length=134927
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  7       AGAAATGATAGGGATAGA  24
+               |||||||||||||| |||
+Sbjct  120022  AGAAATGATAGGGAAAGA  120005
+
+
+>NC_031120.1 Erwinia phage vB_EamM_Caitlin, complete genome
+Length=241147
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  1       GGTAGGAGAAATGAT  15
+               |||||||||||||||
+Sbjct  211263  GGTAGGAGAAATGAT  211249
+
+
+>NC_034266.1 Columbid alphaherpesvirus 1 strain HLJ, complete genome
+Length=204237
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7     AGAAATGATAGGGAT  21
+             |||||||||||||||
+Sbjct  9296  AGAAATGATAGGGAT  9282
+
+
+>NC_028663.1 Cyanophage P-TIM40, complete genome
+Length=188632
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  10     AATGATAGGGATAGAAACGAT  30
+              ||| |||| ||||||||||||
+Sbjct  68954  AATAATAGCGATAGAAACGAT  68934
+
+
+>NC_029692.1 Brazilian marseillevirus strain BH2014, complete genome
+Length=362276
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  17     GGGATAGAAACGATAGAA  34
+              |||||| |||||||||||
+Sbjct  12908  GGGATACAAACGATAGAA  12891
+
+
+>NC_044939.1 Heliothis virescens ascovirus 3g, complete genome
+Length=199721
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18      GGATAGAAACGATAG  32
+               |||||||||||||||
+Sbjct  192260  GGATAGAAACGATAG  192274
+
+
+>NC_009240.1 Gryllus bimaculatus nudivirus, complete genome
+Length=96944
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18     GGATAGAAACGATAG  32
+              |||||||||||||||
+Sbjct  19910  GGATAGAAACGATAG  19924
+
+
+>NC_028883.1 Clostridium phage phiMMP01, complete genome
+Length=44461
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  12     TGATAGGGATAGAAA  26
+              |||||||||||||||
+Sbjct  39640  TGATAGGGATAGAAA  39654
+
+
+>NC_028905.1 Clostridium phage phiCD111, complete genome
+Length=41560
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 23/27 (85%), Gaps = 0/27 (0%)
+ Strand=Plus/Plus
+
+Query  9     AAATGATAGGGATAGAAACGATAGAAA  35
+             |||||  ||| |||||||||||| |||
+Sbjct  8651  AAATGGCAGGAATAGAAACGATACAAA  8677
+
+
+>NC_011398.1 Clostridium phage phiCD27, complete genome
+Length=50930
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  12     TGATAGGGATAGAAA  26
+              |||||||||||||||
+Sbjct  42270  TGATAGGGATAGAAA  42284
+
+
+>NC_009233.1 Heliothis virescens ascovirus 3e, complete genome
+Length=186262
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18      GGATAGAAACGATAG  32
+               |||||||||||||||
+Sbjct  176324  GGATAGAAACGATAG  176338
+
+
+>NC_032558.1 Beihai rhabdo-like virus 2 strain BHTSS7258 hypothetical protein 
+1, hypothetical protein 2, putative glycoprotein, and RNA-dependent 
+RNA polymerase genes, complete cds
+Length=12016
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  3      TAGGAGAAATGATAG  17
+              |||||||||||||||
+Sbjct  11299  TAGGAGAAATGATAG  11313
+
+
+>NC_031927.1 Synechococcus phage S-CAM7 isolate 0910CC49, complete genome
+Length=216121
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  19     GATAGAAACGATAGAAAC  36
+              |||| |||||||||||||
+Sbjct  23463  GATACAAACGATAGAAAC  23480
+
+
+>NC_031922.1 Synechococcus phage S-CAM9 isolate 1109NB16, complete genome
+Length=174830
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  10     AATGATAGGGATAGAAAC  27
+              |||||||||||||| |||
+Sbjct  50327  AATGATAGGGATAGTAAC  50344
+
+
+>NC_028996.1 Clostridium phage phiCDHM19, complete genome
+Length=54295
+
+ Score = 29.5 bits (15),  Expect = 7.8
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  12     TGATAGGGATAGAAA  26
+              |||||||||||||||
+Sbjct  44222  TGATAGGGATAGAAA  44236
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Effective search space used: 6038215352
+
+
+  Database: refseq.200.viral.genomic.fna
+    Posted date:  Jun 15, 2020  8:02 PM
+  Number of letters in database: 318,032,494
+  Number of sequences in database:  12,194
+
+
+
+Matrix: blastn matrix 1 -2
+Gap Penalties: Existence: 5, Extension: 2

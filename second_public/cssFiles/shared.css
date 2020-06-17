@@ -171,3 +171,22 @@ body {
 #BacteriaRepeatsBtn {
   margin-left: 20px;
 }
+
+#contactHtml {
+  margin-left: 15px;
+}
+
+#back {
+  background-color: var(--mid-color);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 14px 20px 14px 20px;
+  border: 0;
+}
+
+
+#back:hover {
+  background-color: #454545;
+  color: white;
+}

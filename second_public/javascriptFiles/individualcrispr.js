@@ -10,6 +10,20 @@
 
 const ipAddress = '10.34.229.125'
 
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var genome_id = urlParams.get('genome_id');
+var crispr_id = urlParams.get('crispr_id');
+var organism_name = urlParams.get('organism_name');
+var display = urlParams.get('display');
+
+document.getElementById("name").innerText = organism_name + " - CRISPR " + crispr_id;
+
+function isNumeric(num){
+    return !isNaN(num)
+}
+
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -27,22 +41,6 @@ function openTab(evt, cityName) {
 // initialization
 document.getElementsByClassName('tablinks')[1].click()
 
-
-
-
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-var genome_id = urlParams.get('genome_id');
-var crispr_id = urlParams.get('crispr_id');
-var organism_name = urlParams.get('organism_name');
-var display = urlParams.get('display');
-
-document.getElementById("name").innerText = organism_name + " - CRISPR " + crispr_id;
-
-function isNumeric(num){
-    return !isNaN(num)
-}
-
 document.getElementById("back").addEventListener('click', ()=>{
     window.location.href = "http://" + ipAddress + ":8080/crispr.html?genome_id=" + genome_id + "&organism_name=" + organism_name + "&display=" + display;
 }, 'false');
@@ -59,6 +57,73 @@ document.getElementById("downloadFullCrisprFormat").addEventListener("click", ()
 
 if (isNumeric(genome_id) && isNumeric(crispr_id)) {
     getCrisprData();
+}
+
+var blastSelectIsShown = false;
+document.getElementById("blastParameters").addEventListener("click", ()=>{
+    if (!blastSelectIsShown) {
+        document.getElementById("blastParametersContent").style.display = "inline";
+    } else {
+        document.getElementById("blastParametersContent").style.display = "none";
+    }
+    blastSelectIsShown = !blastSelectIsShown;
+}, false)
+
+document.getElementById("blast").addEventListener("click", ()=>{
+    runBlast(); 
+}, false);
+
+
+async function runBlast() {
+    if (!isNumeric(document.getElementById("evalue").value) || parseFloat(document.getElementById("evalue").value) < 0) {
+        alert("Invalid E Value, Expecting Positive Numbers");
+        return;
+    }
+
+
+    var oneIsSelected = false;
+    var checkboxes = document.getElementsByClassName("spacerCheckBoxes");
+    var headers = [];
+    var spacerData = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            oneIsSelected = true;
+            headers.push(i+1);
+            spacerData.push(checkboxes[i].value)
+        }
+    }
+    if (!oneIsSelected) {
+        alert("No Checkboxes Were Checked!")
+        return;
+    } 
+    
+
+    var data = {genome_id, 
+                crispr_id, 
+                wordSize: getFormData("wordSize"),
+                database: getFormData("database"),
+                matchScore: getFormData("matchScore"),
+                gapScore: getFormData("gapScore"),
+                evalue: document.getElementById("evalue").value,
+                headers,
+                spacerData}
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }
+    
+
+    const response = await fetch('/blast', options);
+    const responseData = await response.json();
+    window.location.href = "http://" + ipAddress + ":8080/blastlist.html?genome_id=" + genome_id + "&crispr_id=" + crispr_id + "&organism_name=" + organism_name + "&display=" + display + "&file=" + responseData.file;
+}
+
+function getFormData(documentId) {
+    var e = document.getElementById(documentId);
+    return e.options[e.selectedIndex].value;
 }
 
 function download(file, filename) {
@@ -79,7 +144,6 @@ function download(file, filename) {
 }
 
 async function downloadFile(category, genome_id, crispr_id) {
-    console.log("working");
     var data = {
         type: 5,
         genome_id: genome_id,
@@ -152,7 +216,7 @@ async function getCrisprData() {
     const response4 = await fetch('/api', options)
     const responseData4 = await response4.json();
     const crispr_data = responseData4.crispr_data;
-    var crisprhtml = "<table class=\"pure-table pure-table-bordered\" id=\"crisprData\"><thead><tr><th>Start</th><th>Repeat</th><th>Spacer</th><th>Spacer Length</th><th>Select</th></tr></thead>";
+    var crisprhtml = "<table class=\"pure-table pure-table-bordered\" id=\"crisprData\"><thead><tr><th>Start</th><th>Repeat</th><th>Spacer</th><th>Spacer Length</th><th>Select to Blast</th></tr></thead>";
     var alreadyShownRepeat = false;
     var alreadyShownSpacer = false;
 
@@ -164,11 +228,15 @@ async function getCrisprData() {
         crisprhtml = crisprhtml + "<tr>";
             crisprhtml = crisprhtml + "<td>" + crispr_data[i].start + "</td>";
             crisprhtml = crisprhtml + "<td><a href=\"http://bioinfolab.miamioh.edu/crf/str.php?var=" + crispr_data[i].repeat + "\" target=\"_blank\">" + crispr_data[i].repeat + "</a></td>";
-            crisprhtml = crisprhtml + "<td><a href=\"http://bioinfolab.miamioh.edu/crf/str.php?var=" + crispr_data[i].spacer + "\" target=\"_blank\">" + crispr_data[i].spacer + "</a></td>";            
+            crisprhtml = crisprhtml + "<td><a href=\"http://bioinfolab.miamioh.edu/crf/str.php?var=" + crispr_data[i].spacer + "\" target=\"_blank\">" + crispr_data[i].spacer + "</a></td>";     
             var placeHolder = crispr_data[i].spacer_length;
             if (placeHolder != 0) {
                 crisprhtml = crisprhtml + "<td>" + crispr_data[i].spacer_length + "</td>";
             }
+
+            if (crispr_data[i].spacer != "") {
+                crisprhtml = crisprhtml + "<td><input type=\"checkbox\" class=\"spacerCheckBoxes\" value=\"" + crispr_data[i].spacer + "\"></td>"
+            }  
         crisprhtml = crisprhtml + "</tr>";
 
         

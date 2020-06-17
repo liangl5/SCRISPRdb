@@ -1,0 +1,77 @@
+#chartContainer {
+  max-width: 1000px;
+}
+.inlineButtons {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+#buttonAreaDownload {
+  padding-top: 10px;
+}
+#buttonAreaBlast {
+  padding-bottom: 10px;
+}
+
+
+#downloadSpacer, #blast {
+  background-color: #3978e3;
+  color: white;
+}
+
+#downloadFullCrisprNoFormat {
+  background-color: #2dba82;
+  color: white;
+}
+
+#downloadFullCrisprFormat {
+  background-color: #2dba82;
+  color: white;
+}
+
+#blastParametersContent {
+  display: none;
+  
+}
+
+form {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #8dc8f2;
+  max-width: 240px;
+  border: #8dc8f2;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+
+.formElements {
+  color: #0d3a5c;
+}
+
+.optionLabels {
+  margin: 0px;
+  padding-bottom: 10px;
+  color: #0d3a5c;
+}
+
+.selects {
+  width: 240px;
+}
+
+#Browse Data {
+  padding-left: 30px;
+}
+
+.fillInBox {
+  width: 230px;
+}
+
+.spacerCheckBoxes {
+  text-align: center;
+}

@@ -15,11 +15,6 @@ if (tmp.search("var=") != -1) {
 }
 
 
-
-
-
-
-
 var openedArchaea = false, openedBacteria = false, openedBoth = false;
 var openedCurrent = false;
 

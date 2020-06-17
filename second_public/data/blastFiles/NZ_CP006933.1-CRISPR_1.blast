@@ -1,0 +1,2425 @@
+BLASTN 2.6.0+
+
+
+Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
+Miller (2000), "A greedy algorithm for aligning DNA sequences", J
+Comput Biol 2000; 7(1-2):203-14.
+
+
+
+Database: refseq.200.viral.genomic.fna
+           12,194 sequences; 318,032,494 total letters
+
+
+
+Query= NZ_CP006933.1|CRISPR_1|SPACER_1
+
+Length=35
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NC_010179.2  Lactobacillus johnsonii prophage Lj771, complete genome  33.4    0.46 
+NC_041878.1  Pectobacterium phage CBB, complete genome                31.5    1.7  
+NC_027374.1  Bacillus phage Moonbeam, complete genome                 31.5    1.7  
+NC_006565.1  Lactobacillus phage LP65, complete genome                29.5    6.6  
+NC_001731.1  Molluscum contagiosum virus subtype 1, complete genome   29.5    6.6  
+
+
+>NC_010179.2 Lactobacillus johnsonii prophage Lj771, complete genome
+Length=40881
+
+ Score = 33.4 bits (17),  Expect = 0.46
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  7      CCAACTATGATAGTGTA  23
+              |||||||||||||||||
+Sbjct  22664  CCAACTATGATAGTGTA  22680
+
+
+>NC_041878.1 Pectobacterium phage CBB, complete genome
+Length=378379
+
+ Score = 31.5 bits (16),  Expect = 1.7
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Minus
+
+Query  5      TTCCAACTATGATAGT  20
+              ||||||||||||||||
+Sbjct  90547  TTCCAACTATGATAGT  90532
+
+
+>NC_027374.1 Bacillus phage Moonbeam, complete genome
+Length=161239
+
+ Score = 31.5 bits (16),  Expect = 1.7
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  9       AACTATGATAGTGTAC  24
+               ||||||||||||||||
+Sbjct  106817  AACTATGATAGTGTAC  106832
+
+
+>NC_006565.1 Lactobacillus phage LP65, complete genome
+Length=131522
+
+ Score = 29.5 bits (15),  Expect = 6.6
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  15     GATAGTGTACTGTGTGGGCCA  35
+              ||||||||||| || ||||||
+Sbjct  63219  GATAGTGTACTTTGGGGGCCA  63199
+
+
+>NC_001731.1 Molluscum contagiosum virus subtype 1, complete genome
+Length=190289
+
+ Score = 29.5 bits (15),  Expect = 6.6
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  17     TAGTGTACTGTGTGG  31
+              |||||||||||||||
+Sbjct  31249  TAGTGTACTGTGTGG  31263
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Effective search space used: 5084812928
+
+
+Query= NZ_CP006933.1|CRISPR_1|SPACER_2
+
+Length=36
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NC_004778.3  Choristoneura fumiferana multiple nucleopolyhedrovir...  35.3    0.13 
+NC_014467.1  Enterobacteria phage RB16, complete genome               33.4    0.49 
+NC_025414.1  Citrobacter phage Miller, complete genome                33.4    0.49 
+NC_026266.1  Sewage-associated circular DNA virus-23 isolate SaCV...  33.4    0.49 
+NC_032814.1  Wenzhou picorna-like virus 52 strain beimix75583 hyp...  33.4    0.49 
+NC_031057.1  Citrobacter phage vB_CfrM_CfP1, complete genome          33.4    0.49 
+NC_028819.1  Pseudoalteromonas Phage H103, complete genome            33.4    0.49 
+NC_029013.1  Citrobacter phage IME-CF2, complete genome               33.4    0.49 
+NC_007580.2  Saint Louis encephalitis virus, complete genome          31.5    1.8  
+NC_042078.1  Shigella phage Sf24, complete genome                     31.5    1.8  
+NC_041884.1  Acinetobacter phage vB_AbaM_ME3, complete genome         31.5    1.8  
+NC_006312.2  Influenza C virus (C/Ann Arbor/1/50) M1, CM2 genes f...  31.5    1.8  
+NC_000852.5  Paramecium bursaria Chlorella virus 1, complete genome   31.5    1.8  
+NC_028977.1  Klebsiella phage vB_KpnP_KpV289, complete genome         31.5    1.8  
+NC_017969.1  Escherichia phage vB_EcoS_AKFV33, complete genome        29.5    7.0  
+NC_025829.1  Shigella phage pSs-1, complete genome                    29.5    7.0  
+NC_041928.1  Staphylococcus phage phiIBB-SEP1, complete genome        29.5    7.0  
+NC_042100.1  Vibrio phage Aphrodite1, complete genome                 29.5    7.0  
+NC_041916.1  Vibrio phage pTD1 DNA, complete genome                   29.5    7.0  
+NC_041880.1  Pseudomonas phage phiPMW, complete genome                29.5    7.0  
+NC_038880.1  Rosavirus M-7 polyprotein gene, complete cds             29.5    7.0  
+NC_038277.1  Trout rhabdovirus 903/87 nucleocapsid protein, phosp...  29.5    7.0  
+NC_011318.1  Clostridium phage 39-O, complete genome                  29.5    7.0  
+NC_027983.1  Enterobacteria phage AR1 DNA, complete genome            29.5    7.0  
+NC_025448.1  Enterobacteria phage RB27, complete genome               29.5    7.0  
+NC_020875.1  Cyanophage S-SSM4 genomic sequence                       29.5    7.0  
+NC_020837.1  Synechococcus phage S-CAM1 genomic sequence              29.5    7.0  
+NC_015457.1  Shigella phage Shfl2, complete genome                    29.5    7.0  
+NC_001826.2  Murine herpesvirus 68 strain WUMS, complete genome       29.5    7.0  
+NC_012638.1  Enterobacteria phage RB14, complete genome               29.5    7.0  
+NC_000866.4  Enterobacteria phage T4, complete genome                 29.5    7.0  
+NC_024451.1  Armadillidium vulgare iridescent virus complete genome   29.5    7.0  
+NC_023639.1  Mimivirus terra2 genome                                  29.5    7.0  
+NC_022332.1  Eel picornavirus 1 strain F15/05, complete genome        29.5    7.0  
+NC_021798.1  Cellulophaga phage phi17:2, complete genome              29.5    7.0  
+NC_021312.1  Phaeocystis globosa virus strain 16T, complete genome    29.5    7.0  
+NC_024139.1  Escherichia phage vB_EcoS_FFH1, complete genome          29.5    7.0  
+NC_024125.2  Escherichia phage e11/2, complete genome                 29.5    7.0  
+NC_019496.1  Clostridium phage phiCP26F, complete genome              29.5    7.0  
+NC_019503.1  Enterobacteria phage ime09, complete genome              29.5    7.0  
+NC_019505.1  Escherichia phage wV7, complete genome                   29.5    7.0  
+NC_024070.1  Rosavirus 2 strain GA7403, complete genome               29.5    7.0  
+NC_035619.1  Odocoileus adenovirus 1, complete genome                 29.5    7.0  
+NC_031922.1  Synechococcus phage S-CAM9 isolate 1109NB16, complet...  29.5    7.0  
+NC_031103.1  Escherichia phage vB_EcoM-UFV13, complete genome         29.5    7.0  
+NC_031030.1  Escherichia phage UFV-AREG1, complete genome             29.5    7.0  
+NC_031047.1  Escherichia phage HY03, complete genome                  29.5    7.0  
+NC_023423.1  Pithovirus sibericum isolate P1084-T, complete genome    29.5    7.0  
+NC_027707.1  Salmon gill poxvirus, complete genome                    29.5    7.0  
+NC_027349.1  Escherichia phage HY01, complete genome                  29.5    7.0  
+NC_018088.1  Colwellia phage 9A, complete genome                      29.5    7.0  
+NC_030691.1  Aquatic bird bornavirus 2, complete cds                  29.5    7.0  
+
+
+>NC_004778.3 Choristoneura fumiferana multiple nucleopolyhedrovirus, complete 
+genome
+Length=129593
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  19     GTTGAAGAAATATATTGA  36
+              ||||||||||||||||||
+Sbjct  78976  GTTGAAGAAATATATTGA  78959
+
+
+>NC_014467.1 Enterobacteria phage RB16, complete genome
+Length=176788
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Minus
+
+Query  20     TTGAAGAAATATATTGA  36
+              |||||||||||||||||
+Sbjct  70380  TTGAAGAAATATATTGA  70364
+
+
+>NC_025414.1 Citrobacter phage Miller, complete genome
+Length=178171
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Minus
+
+Query  20     TTGAAGAAATATATTGA  36
+              |||||||||||||||||
+Sbjct  71861  TTGAAGAAATATATTGA  71845
+
+
+>NC_026266.1 Sewage-associated circular DNA virus-23 isolate SaCV-23_NZ-BS4025-2012, 
+complete genome
+Length=2309
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  9    ATCGGGAATGGTTGAAG  25
+            |||||||||||||||||
+Sbjct  333  ATCGGGAATGGTTGAAG  349
+
+
+>NC_032814.1 Wenzhou picorna-like virus 52 strain beimix75583 hypothetical 
+protein 1 and hypothetical protein 2 genes, complete cds
+Length=8991
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Plus
+
+Query  8     AATCGGGAATGGTTGAAGAA  27
+             |||| |||||||||||||||
+Sbjct  8105  AATCCGGAATGGTTGAAGAA  8124
+
+
+>NC_031057.1 Citrobacter phage vB_CfrM_CfP1, complete genome
+Length=180219
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Minus
+
+Query  20     TTGAAGAAATATATTGA  36
+              |||||||||||||||||
+Sbjct  73699  TTGAAGAAATATATTGA  73683
+
+
+>NC_028819.1 Pseudoalteromonas Phage H103, complete genome
+Length=43190
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  6     ATAATCGGGAATGGTTG  22
+             |||||||||||||||||
+Sbjct  8626  ATAATCGGGAATGGTTG  8642
+
+
+>NC_029013.1 Citrobacter phage IME-CF2, complete genome
+Length=177688
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  20     TTGAAGAAATATATTGA  36
+              |||||||||||||||||
+Sbjct  47746  TTGAAGAAATATATTGA  47762
+
+
+>NC_007580.2 Saint Louis encephalitis virus, complete genome
+Length=10940
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  13    GGAATGGTTGAAGAAA  28
+             ||||||||||||||||
+Sbjct  8177  GGAATGGTTGAAGAAA  8192
+
+
+>NC_042078.1 Shigella phage Sf24, complete genome
+Length=168112
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Minus
+
+Query  18     GGTTGAAGAAATATAT  33
+              ||||||||||||||||
+Sbjct  78369  GGTTGAAGAAATATAT  78354
+
+
+>NC_041884.1 Acinetobacter phage vB_AbaM_ME3, complete genome
+Length=234900
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  15      AATGGTTGAAGAAATATAT  33
+               ||||||| |||||||||||
+Sbjct  194757  AATGGTTCAAGAAATATAT  194739
+
+
+>NC_006312.2 Influenza C virus (C/Ann Arbor/1/50) M1, CM2 genes for matrix 
+protein, CM2 protein, complete cds
+Length=1180
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  15   AATGGTTGAAGAAATATAT  33
+            ||||||||||||| |||||
+Sbjct  394  AATGGTTGAAGAAGTATAT  412
+
+
+>NC_000852.5 Paramecium bursaria Chlorella virus 1, complete genome
+Length=330611
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  21      TGAAGAAATATATTGA  36
+               ||||||||||||||||
+Sbjct  261269  TGAAGAAATATATTGA  261284
+
+
+>NC_028977.1 Klebsiella phage vB_KpnP_KpV289, complete genome
+Length=41054
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  17    TGGTTGAAGAAATATA  32
+             ||||||||||||||||
+Sbjct  7499  TGGTTGAAGAAATATA  7514
+
+
+>NC_017969.1 Escherichia phage vB_EcoS_AKFV33, complete genome
+Length=108853
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  12     GGGAATGGTTGAAGA  26
+              |||||||||||||||
+Sbjct  83369  GGGAATGGTTGAAGA  83383
+
+
+>NC_025829.1 Shigella phage pSs-1, complete genome
+Length=164999
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  156338  GTTGAAGAAATATAT  156324
+
+
+>NC_041928.1 Staphylococcus phage phiIBB-SEP1, complete genome
+Length=139928
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  22     GAAGAAATATATTGA  36
+              |||||||||||||||
+Sbjct  18654  GAAGAAATATATTGA  18668
+
+
+>NC_042100.1 Vibrio phage Aphrodite1, complete genome
+Length=237722
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  14     GAATGGTTGAAGAAA  28
+              |||||||||||||||
+Sbjct  38041  GAATGGTTGAAGAAA  38027
+
+
+>NC_041916.1 Vibrio phage pTD1 DNA, complete genome
+Length=239276
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  13      GGAATGGTTGAAGAA  27
+               |||||||||||||||
+Sbjct  192967  GGAATGGTTGAAGAA  192981
+
+
+>NC_041880.1 Pseudomonas phage phiPMW, complete genome
+Length=103218
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  15     AATGGTTGAAGAAAT  29
+              |||||||||||||||
+Sbjct  77575  AATGGTTGAAGAAAT  77561
+
+
+>NC_038880.1 Rosavirus M-7 polyprotein gene, complete cds
+Length=8749
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  15    AATGGTTGAAGAAAT  29
+             |||||||||||||||
+Sbjct  7871  AATGGTTGAAGAAAT  7885
+
+
+>NC_038277.1 Trout rhabdovirus 903/87 nucleocapsid protein, phosphoprotein, 
+matrix protein, and glycoprotein genes, complete cds; and 
+polymerase protein gene, partial cds
+Length=6552
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  9     ATCGGGAATGGTTGAAGA  26
+             ||||||||||||| ||||
+Sbjct  4292  ATCGGGAATGGTTCAAGA  4309
+
+
+>NC_011318.1 Clostridium phage 39-O, complete genome
+Length=38753
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  12     GGGAATGGTTGAAGAAAT  29
+              |||||| |||||||||||
+Sbjct  38208  GGGAATCGTTGAAGAAAT  38225
+
+
+>NC_027983.1 Enterobacteria phage AR1 DNA, complete genome
+Length=167435
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  153352  GTTGAAGAAATATAT  153338
+
+
+>NC_025448.1 Enterobacteria phage RB27, complete genome
+Length=165179
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  151070  GTTGAAGAAATATAT  151056
+
+
+>NC_020875.1 Cyanophage S-SSM4 genomic sequence
+Length=182801
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  13      GGAATGGTTGAAGAAATA  30
+               ||||| ||||||||||||
+Sbjct  122985  GGAATTGTTGAAGAAATA  123002
+
+
+>NC_020837.1 Synechococcus phage S-CAM1 genomic sequence
+Length=198013
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  22     GAAGAAATATATTGA  36
+              |||||||||||||||
+Sbjct  74572  GAAGAAATATATTGA  74558
+
+
+>NC_015457.1 Shigella phage Shfl2, complete genome
+Length=165919
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  150738  GTTGAAGAAATATAT  150724
+
+
+>NC_001826.2 Murine herpesvirus 68 strain WUMS, complete genome
+Length=119451
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  13     GGAATGGTTGAAGAAATATAT  33
+              ||| |||||||||||| ||||
+Sbjct  62497  GGACTGGTTGAAGAAAAATAT  62517
+
+
+>NC_012638.1 Enterobacteria phage RB14, complete genome
+Length=165429
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  151073  GTTGAAGAAATATAT  151059
+
+
+>NC_000866.4 Enterobacteria phage T4, complete genome
+Length=168903
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  155492  GTTGAAGAAATATAT  155478
+
+
+>NC_024451.1 Armadillidium vulgare iridescent virus complete genome
+Length=220222
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  22      GAAGAAATATATTGA  36
+               |||||||||||||||
+Sbjct  205819  GAAGAAATATATTGA  205833
+
+
+>NC_023639.1 Mimivirus terra2 genome
+Length=1168989
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  22      GAAGAAATATATTGA  36
+               |||||||||||||||
+Sbjct  525031  GAAGAAATATATTGA  525017
+
+
+>NC_022332.1 Eel picornavirus 1 strain F15/05, complete genome
+Length=7539
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  12    GGGAATGGTTGAAGAAAT  29
+             |||| |||||||||||||
+Sbjct  3715  GGGATTGGTTGAAGAAAT  3732
+
+
+>NC_021798.1 Cellulophaga phage phi17:2, complete genome
+Length=145343
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  21      TGAAGAAATATATTG  35
+               |||||||||||||||
+Sbjct  105191  TGAAGAAATATATTG  105205
+
+
+>NC_021312.1 Phaeocystis globosa virus strain 16T, complete genome
+Length=459984
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATATTGA  36
+               ||||| ||||||||||||
+Sbjct  431484  GTTGATGAAATATATTGA  431467
+
+
+>NC_024139.1 Escherichia phage vB_EcoS_FFH1, complete genome
+Length=108483
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  12     GGGAATGGTTGAAGA  26
+              |||||||||||||||
+Sbjct  83192  GGGAATGGTTGAAGA  83206
+
+
+>NC_024125.2 Escherichia phage e11/2, complete genome
+Length=168470
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  154096  GTTGAAGAAATATAT  154082
+
+
+>NC_019496.1 Clostridium phage phiCP26F, complete genome
+Length=39188
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  12     GGGAATGGTTGAAGAAAT  29
+              |||||| |||||||||||
+Sbjct  38643  GGGAATCGTTGAAGAAAT  38660
+
+
+>NC_019503.1 Enterobacteria phage ime09, complete genome
+Length=166499
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  151224  GTTGAAGAAATATAT  151210
+
+
+>NC_019505.1 Escherichia phage wV7, complete genome
+Length=166452
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  152172  GTTGAAGAAATATAT  152158
+
+
+>NC_024070.1 Rosavirus 2 strain GA7403, complete genome
+Length=8931
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  15    AATGGTTGAAGAAAT  29
+             |||||||||||||||
+Sbjct  8174  AATGGTTGAAGAAAT  8188
+
+
+>NC_035619.1 Odocoileus adenovirus 1, complete genome
+Length=30620
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  15     AATGGTTGAAGAAAT  29
+              |||||||||||||||
+Sbjct  20987  AATGGTTGAAGAAAT  21001
+
+
+>NC_031922.1 Synechococcus phage S-CAM9 isolate 1109NB16, complete genome
+Length=174830
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  19     GTTGAAGAAATATATTGA  36
+              |||| |||||||||||||
+Sbjct  52559  GTTGGAGAAATATATTGA  52542
+
+
+>NC_031103.1 Escherichia phage vB_EcoM-UFV13, complete genome
+Length=165772
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  151120  GTTGAAGAAATATAT  151106
+
+
+>NC_031030.1 Escherichia phage UFV-AREG1, complete genome
+Length=170788
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  153084  GTTGAAGAAATATAT  153070
+
+
+>NC_031047.1 Escherichia phage HY03, complete genome
+Length=170770
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  138784  GTTGAAGAAATATAT  138798
+
+
+>NC_023423.1 Pithovirus sibericum isolate P1084-T, complete genome
+Length=610033
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  10      TCGGGAATGGTTGAA  24
+               |||||||||||||||
+Sbjct  258131  TCGGGAATGGTTGAA  258145
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  14      GAATGGTTGAAGAAA  28
+               |||||||||||||||
+Sbjct  601905  GAATGGTTGAAGAAA  601891
+
+
+>NC_027707.1 Salmon gill poxvirus, complete genome
+Length=241564
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  7       TAATCGGGAATGGTT  21
+               |||||||||||||||
+Sbjct  118490  TAATCGGGAATGGTT  118504
+
+
+>NC_027349.1 Escherichia phage HY01, complete genome
+Length=166977
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      GTTGAAGAAATATAT  33
+               |||||||||||||||
+Sbjct  153222  GTTGAAGAAATATAT  153208
+
+
+>NC_018088.1 Colwellia phage 9A, complete genome
+Length=104936
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  15     AATGGTTGAAGAAAT  29
+              |||||||||||||||
+Sbjct  67882  AATGGTTGAAGAAAT  67896
+
+
+>NC_030691.1 Aquatic bird bornavirus 2, complete cds
+Length=8904
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  10    TCGGGAATGGTTGAA  24
+             |||||||||||||||
+Sbjct  3106  TCGGGAATGGTTGAA  3120
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Effective search space used: 5402613736
+
+
+Query= NZ_CP006933.1|CRISPR_1|SPACER_10
+
+Length=36
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NC_003996.1  Tamana bat virus, genome                                 33.4    0.49 
+NC_005355.1  Lactobacillus prophage Lj965, complete genome            31.5    1.8  
+NC_026421.1  Equid herpesvirus 5 strain 2-141/67, complete genome     31.5    1.8  
+NC_033735.1  Wuhan nido-like virus 1 strain SCM49454 1ab, hypothe...  31.5    1.8  
+NC_028470.1  Pleospora typhicola fusarivirus 1 175 kDa protein an...  31.5    1.8  
+NC_042093.1  Klebsiella phage Sugarland, complete genome              29.5    7.0  
+NC_009333.1  Human herpesvirus 8 strain GK18, complete genome         29.5    7.0  
+NC_042112.1  Campylobacter phage CP81, complete genome                29.5    7.0  
+NC_042061.1  Salmonella phage STML-13-1, partial genome               29.5    7.0  
+NC_041972.1  Erwinia phage vB_EamM_Deimos-Minion, complete genome     29.5    7.0  
+NC_041899.1  Klebsiella phage vB_Kpn_IME260, complete genome          29.5    7.0  
+NC_038375.1  Trichoplusia ni granulovirus LBIV-12, complete genome    29.5    7.0  
+NC_016570.1  Escherichia phage vB_EcoM_CBA120, complete genome        29.5    7.0  
+NC_016562.1  Campylobacter phage CPX, complete genome                 29.5    7.0  
+NC_015284.1  Prochlorococcus phage P-HM2, complete genome             29.5    7.0  
+NC_013772.1  Pseudaletia unipuncta granulovirus, complete genome      29.5    7.0  
+NC_008492.1  Corchorus yellow spot virus DNA A, complete sequence     29.5    7.0  
+NC_020855.1  Cyanophage P-RSM6 genomic sequence                       29.5    7.0  
+NC_015938.1  Salmonella phage 7-11, complete genome                   29.5    7.0  
+NC_008779.1  Sida yellow mosaic Yucatan virus DNA A, complete seq...  29.5    7.0  
+NC_015296.1  Salmonella phage Vi01, complete genome                   29.5    7.0  
+NC_002058.3  Poliovirus, complete genome                              29.5    7.0  
+NC_007383.1  Trichoplusia ni SNPV, complete genome                    29.5    7.0  
+NC_022768.1  Salmonella phage Maynard, complete genome                29.5    7.0  
+NC_025446.1  Escherichia phage ECML-4, complete genome                29.5    7.0  
+NC_036594.1  Orpheovirus IHUMI-LCC2 genome assembly, complete gen...  29.5    7.0  
+NC_019452.1  Escherichia phage PhaxI, complete genome                 29.5    7.0  
+NC_023856.1  Salmonella phage vB_SalM_SJ2, complete genome            29.5    7.0  
+NC_033071.1  Hubei odonate virus 6 strain QTM11719 hypothetical p...  29.5    7.0  
+NC_026923.1  Synechococcus phage ACG-2014d isolate Syn7803C102, c...  29.5    7.0  
+
+
+>NC_003996.1 Tamana bat virus, genome
+Length=10053
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Minus
+
+Query  8     CAATACATTTCCATGGTAGA  27
+             ||||||||||||| ||||||
+Sbjct  8129  CAATACATTTCCAAGGTAGA  8110
+
+
+>NC_005355.1 Lactobacillus prophage Lj965, complete genome
+Length=40190
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  16     TTCCATGGTAGATGATAAG  34
+              ||| |||||||||||||||
+Sbjct  37211  TTCAATGGTAGATGATAAG  37229
+
+
+>NC_026421.1 Equid herpesvirus 5 strain 2-141/67, complete genome
+Length=182380
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  15     TTTCCATGGTAGATGA  30
+              ||||||||||||||||
+Sbjct  18440  TTTCCATGGTAGATGA  18455
+
+
+>NC_033735.1 Wuhan nido-like virus 1 strain SCM49454 1ab, hypothetical protein, 
+and putative structural polyprotein genes, complete cds
+Length=17562
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  5     TATCAATACATTTCCATGG  23
+             ||||||||||| |||||||
+Sbjct  9584  TATCAATACATGTCCATGG  9566
+
+
+>NC_028470.1 Pleospora typhicola fusarivirus 1 175 kDa protein and 59 kDa 
+protein genes, complete cds
+Length=6733
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  13    CATTTCCATGGTAGATGAT  31
+             ||||||||||| |||||||
+Sbjct  4659  CATTTCCATGGCAGATGAT  4677
+
+
+>NC_042093.1 Klebsiella phage Sugarland, complete genome
+Length=111103
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  14     ATTTCCATGGTAGAT  28
+              |||||||||||||||
+Sbjct  66571  ATTTCCATGGTAGAT  66557
+
+
+>NC_009333.1 Human herpesvirus 8 strain GK18, complete genome
+Length=137969
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  13      CATTTCCATGGTAGATGA  30
+               |||||||||||||| |||
+Sbjct  130944  CATTTCCATGGTAGGTGA  130961
+
+
+>NC_042112.1 Campylobacter phage CP81, complete genome
+Length=132454
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  6       ATCAATACATTTCCA  20
+               |||||||||||||||
+Sbjct  117770  ATCAATACATTTCCA  117756
+
+
+>NC_042061.1 Salmonella phage STML-13-1, partial genome
+Length=157235
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  19     CATGGTAGATGATAA  33
+              |||||||||||||||
+Sbjct  71076  CATGGTAGATGATAA  71090
+
+
+>NC_041972.1 Erwinia phage vB_EamM_Deimos-Minion, complete genome
+Length=273501
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      CATGGTAGATGATAA  33
+               |||||||||||||||
+Sbjct  158212  CATGGTAGATGATAA  158198
+
+
+>NC_041899.1 Klebsiella phage vB_Kpn_IME260, complete genome
+Length=123490
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  14     ATTTCCATGGTAGAT  28
+              |||||||||||||||
+Sbjct  63253  ATTTCCATGGTAGAT  63239
+
+
+>NC_038375.1 UNVERIFIED: Trichoplusia ni granulovirus LBIV-12, complete genome
+Length=175360
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  14     ATTTCCATGGTAGATGAT  31
+              |||||||||||| |||||
+Sbjct  22621  ATTTCCATGGTAAATGAT  22604
+
+
+>NC_016570.1 Escherichia phage vB_EcoM_CBA120, complete genome
+Length=157304
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  19     CATGGTAGATGATAA  33
+              |||||||||||||||
+Sbjct  95929  CATGGTAGATGATAA  95943
+
+
+>NC_016562.1 Campylobacter phage CPX, complete genome
+Length=132662
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  6      ATCAATACATTTCCA  20
+              |||||||||||||||
+Sbjct  10705  ATCAATACATTTCCA  10719
+
+
+>NC_015284.1 Prochlorococcus phage P-HM2, complete genome
+Length=183806
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  18      CCATGGTAGATGATA  32
+               |||||||||||||||
+Sbjct  164467  CCATGGTAGATGATA  164453
+
+
+>NC_013772.1 Pseudaletia unipuncta granulovirus, complete genome
+Length=176677
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  14     ATTTCCATGGTAGATGAT  31
+              |||||||||||| |||||
+Sbjct  22687  ATTTCCATGGTAAATGAT  22670
+
+
+>NC_008492.1 Corchorus yellow spot virus DNA A, complete sequence
+Length=2606
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7     TCAATACATTTCCAT  21
+             |||||||||||||||
+Sbjct  2225  TCAATACATTTCCAT  2211
+
+
+>NC_020855.1 Cyanophage P-RSM6 genomic sequence
+Length=192497
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  11      TACATTTCCATGGTA  25
+               |||||||||||||||
+Sbjct  153407  TACATTTCCATGGTA  153393
+
+
+>NC_015938.1 Salmonella phage 7-11, complete genome
+Length=89916
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  20     ATGGTAGATGATAAG  34
+              |||||||||||||||
+Sbjct  86194  ATGGTAGATGATAAG  86180
+
+
+>NC_008779.1 Sida yellow mosaic Yucatan virus DNA A, complete sequence
+Length=2611
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7     TCAATACATTTCCAT  21
+             |||||||||||||||
+Sbjct  2228  TCAATACATTTCCAT  2214
+
+
+>NC_015296.1 Salmonella phage Vi01, complete genome
+Length=157061
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  19     CATGGTAGATGATAA  33
+              |||||||||||||||
+Sbjct  97663  CATGGTAGATGATAA  97677
+
+
+>NC_002058.3 Poliovirus, complete genome
+Length=7440
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  10    ATACATTTCCATGGT  24
+             |||||||||||||||
+Sbjct  1969  ATACATTTCCATGGT  1955
+
+
+>NC_007383.1 Trichoplusia ni SNPV, complete genome
+Length=134394
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  6      ATCAATACATTTCCA  20
+              |||||||||||||||
+Sbjct  54020  ATCAATACATTTCCA  54006
+
+
+>NC_022768.1 Salmonella phage Maynard, complete genome
+Length=154701
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19     CATGGTAGATGATAA  33
+              |||||||||||||||
+Sbjct  61078  CATGGTAGATGATAA  61064
+
+
+>NC_025446.1 Escherichia phage ECML-4, complete genome
+Length=157308
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      CATGGTAGATGATAA  33
+               |||||||||||||||
+Sbjct  118196  CATGGTAGATGATAA  118182
+
+
+>NC_036594.1 Orpheovirus IHUMI-LCC2 genome assembly, complete genome: monopartite
+Length=1473573
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  4       ATATCAATACATTTC  18
+               |||||||||||||||
+Sbjct  950065  ATATCAATACATTTC  950051
+
+
+>NC_019452.1 Escherichia phage PhaxI, complete genome
+Length=156628
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  19     CATGGTAGATGATAA  33
+              |||||||||||||||
+Sbjct  95857  CATGGTAGATGATAA  95871
+
+
+>NC_023856.1 Salmonella phage vB_SalM_SJ2, complete genome
+Length=152460
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  19      CATGGTAGATGATAA  33
+               |||||||||||||||
+Sbjct  138864  CATGGTAGATGATAA  138850
+
+
+>NC_033071.1 Hubei odonate virus 6 strain QTM11719 hypothetical protein 1, 
+hypothetical protein 2, hypothetical protein 3, and hypothetical 
+protein 4 genes, complete cds
+Length=12535
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  4     ATATCAATACATTTC  18
+             |||||||||||||||
+Sbjct  8843  ATATCAATACATTTC  8857
+
+
+>NC_026923.1 Synechococcus phage ACG-2014d isolate Syn7803C102, complete genome
+Length=179110
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  1       TTCATATCAATACAT  15
+               |||||||||||||||
+Sbjct  117816  TTCATATCAATACAT  117830
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Effective search space used: 5402613736
+
+
+Query= NZ_CP006933.1|CRISPR_1|SPACER_15
+
+Length=36
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NC_021247.1  Adoxophyes honmai enomopoxvirus 'L', complete genome     41.1    0.002
+NC_035460.1  Eptesipox virus strain Washington, complete genome       37.2    0.034
+NC_043235.1  Paramecium bursaria Chlorella virus NYs1, partial ge...  35.3    0.13 
+NC_009899.1  Paramecium bursaria Chlorella virus AR158, complete ...  35.3    0.13 
+NC_009898.1  Paramecium bursaria Chlorella virus NY2A, complete g...  35.3    0.13 
+NC_014637.1  Cafeteria roenbergensis virus BV-PW1, complete genome    35.3    0.13 
+NC_021806.1  Cellulophaga phage phi14:2, complete genome              35.3    0.13 
+NC_040536.1  Esparto virus isolate SRR3939042_Esparto_2012, compl...  33.4    0.49 
+NC_027374.1  Bacillus phage Moonbeam, complete genome                 33.4    0.49 
+NC_021248.1  Choristoneura biennis entomopoxvirus 'L', complete g...  33.4    0.49 
+NC_029022.1  Clostridium phage phiCT9441A, complete genome            33.4    0.49 
+NC_014457.1  Clostridium phage phiCTP1, complete genome               33.4    0.49 
+NC_001993.1  Melanoplus sanguinipes entomopoxvirus, complete genome   33.4    0.49 
+NC_021249.1  Choristoneura rosaceana entomopoxvirus 'L', complete...  33.4    0.49 
+NC_021246.1  Mythimna separata entomopoxvirus 'L', complete genome    33.4    0.49 
+NC_002188.1  Fowlpox virus, complete genome                           33.4    0.49 
+NC_036594.1  Orpheovirus IHUMI-LCC2 genome assembly, complete gen...  33.4    0.49 
+NC_030920.1  Bacillus phage Eldridge, complete genome                 33.4    0.49 
+NC_028962.1  Staphylococcus phage phiIPLA-C1C, complete genome        31.5    1.8  
+NC_041928.1  Staphylococcus phage phiIBB-SEP1, complete genome        31.5    1.8  
+NC_002641.1  Meleagrid herpesvirus 1, complete genome                 31.5    1.8  
+NC_002520.1  Amsacta moorei entomopoxvirus 'L', complete genome       31.5    1.8  
+NC_010107.1  Bandicoot papillomatosis carcinomatosis virus type 1...  31.5    1.8  
+NC_010240.1  Helicoverpa armigera granulovirus, complete genome       31.5    1.8  
+NC_010583.1  Enterobacteria phage EPS7, complete genome               31.5    1.8  
+NC_023177.1  Choristoneura murinana alphabaculovirus strain Darms...  31.5    1.8  
+NC_024697.1  Aureococcus anophagefferens virus isolate BtV-01, co...  31.5    1.8  
+NC_024446.1  Penguinpox virus isolate PSan92, complete genome         31.5    1.8  
+NC_023582.1  Staphylococcus phage vB_SepS_SEP9, complete genome       31.5    1.8  
+NC_036582.1  Flamingopox virus FGPVKD09, complete genome              31.5    1.8  
+NC_031039.1  Bacillus phage AR9, complete genome                      31.5    1.8  
+NC_028094.1  Chrysochromulina ericina virus isolate CeV-01B, comp...  31.5    1.8  
+NC_046965.1  Canada goose coronavirus strain Cambridge_Bay_2017, ...  29.5    7.0  
+NC_044939.1  Heliothis virescens ascovirus 3g, complete genome        29.5    7.0  
+NC_022918.1  Staphylococcus phage S25-4 DNA, complete genome          29.5    7.0  
+NC_022920.1  Staphylococcus phage S25-3 DNA, complete genome          29.5    7.0  
+NC_034383.1  Pacmanvirus A23 genome assembly, complete genome: mo...  29.5    7.0  
+NC_016658.1  Cyanophage NATL1A-7, complete genome                     29.5    7.0  
+NC_012663.1  Lactococcus phage P087, complete genome                  29.5    7.0  
+NC_015263.1  Lactococcus phage 949, complete genome                   29.5    7.0  
+NC_015251.1  Aeromonas phage 65, complete genome                      29.5    7.0  
+NC_016072.1  Megavirus chiliensis, complete genome                    29.5    7.0  
+NC_015228.1  Sweet potato vein clearing virus, complete genome        29.5    7.0  
+NC_011588.1  Oryctes rhinoceros virus, complete genome                29.5    7.0  
+NC_001270.2  Spiroplasma phage SVTS2, complete genome                 29.5    7.0  
+NC_002484.2  Bacteriophage D3, complete genome                        29.5    7.0  
+NC_005309.1  Canarypox virus, complete genome                         29.5    7.0  
+NC_015464.1  Campylobacter phage NCTC12673, complete genome           29.5    7.0  
+NC_008888.1  Glypta fumiferanae ichnovirus segment B46, complete ...  29.5    7.0  
+NC_003389.1  Swinepox virus, complete genome                          29.5    7.0  
+NC_005137.2  Choristoneura fumiferana DEF MNPV, complete genome       29.5    7.0  
+NC_008520.2  Anticarsia gemmatalis nucleopolyhedrovirus, complete...  29.5    7.0  
+NC_026430.1  Condylorrhiza vestigialis MNPV, complete genome          29.5    7.0  
+NC_025830.1  Escherichia phage Av-05, complete genome                 29.5    7.0  
+NC_021802.1  Cellulophaga phage phi10:1, complete genome              29.5    7.0  
+NC_021333.1  Phaeocystis globosa virus virophage, complete genome     29.5    7.0  
+NC_021312.1  Phaeocystis globosa virus strain 16T, complete genome    29.5    7.0  
+NC_033423.1  Lymphocystis disease virus Sa isolate SA9, complete ...  29.5    7.0  
+NC_031909.1  Campylobacter phage PC14, complete genome                29.5    7.0  
+NC_031761.1  Anticarsia gemmatalis multicapsid nucleopolyhedrovir...  29.5    7.0  
+NC_030656.1  Pteropox virus strain Australia, complete genome         29.5    7.0  
+NC_023426.1  Anomala cuprea entomopoxvirus DNA, complete genome, ...  29.5    7.0  
+NC_018272.1  Persicivirga phage P12024L, complete genome              29.5    7.0  
+NC_018271.1  Persicivirga phage P12024S, complete genome              29.5    7.0  
+NC_029094.1  Pseudoalteromonas phage H101, complete genome            29.5    7.0  
+NC_028955.1  Prochlorococcus phage P-TIM68, complete genome           29.5    7.0  
+NC_027778.1  Scale drop disease virus isolate C4575, partial genome   29.5    7.0  
+NC_027016.1  Papio ursinus cytomegalovirus isolate OCOM4-52, comp...  29.5    7.0  
+
+
+>NC_021247.1 Adoxophyes honmai enomopoxvirus 'L', complete genome
+Length=228750
+
+ Score = 41.1 bits (21),  Expect = 0.002
+ Identities = 29/33 (88%), Gaps = 0/33 (0%)
+ Strand=Plus/Minus
+
+Query  2       CTTTTAATATAGTATTATAATAAGGGCAAAAAT  34
+               ||||||||||||| ||||||| |  ||||||||
+Sbjct  220089  CTTTTAATATAGTTTTATAATTATTGCAAAAAT  220057
+
+
+>NC_035460.1 Eptesipox virus strain Washington, complete genome
+Length=176688
+
+ Score = 37.2 bits (19),  Expect = 0.034
+ Identities = 21/22 (95%), Gaps = 0/22 (0%)
+ Strand=Plus/Minus
+
+Query  3       TTTTAATATAGTATTATAATAA  24
+               ||||| ||||||||||||||||
+Sbjct  146887  TTTTATTATAGTATTATAATAA  146866
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  1      ACTTTTAATATAGTA  15
+              |||||||||||||||
+Sbjct  53942  ACTTTTAATATAGTA  53956
+
+
+>NC_043235.1 Paramecium bursaria Chlorella virus NYs1, partial genome
+Length=348463
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAAG  25
+               ||||||||||||||||||
+Sbjct  215330  ATATAGTATTATAATAAG  215347
+
+
+>NC_009899.1 Paramecium bursaria Chlorella virus AR158, complete genome
+Length=344691
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAAG  25
+               ||||||||||||||||||
+Sbjct  206556  ATATAGTATTATAATAAG  206573
+
+
+>NC_009898.1 Paramecium bursaria Chlorella virus NY2A, complete genome
+Length=368683
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAAG  25
+               ||||||||||||||||||
+Sbjct  231451  ATATAGTATTATAATAAG  231468
+
+
+>NC_014637.1 Cafeteria roenbergensis virus BV-PW1, complete genome
+Length=617453
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 20/21 (95%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  15      ATTATAATAAGGGCAAAAATA  35
+               ||||||||||||| |||||||
+Sbjct  584917  ATTATAATAAGGGAAAAAATA  584937
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  4       TTTAATATAGTATTATAAT  22
+               ||| |||||||||||||||
+Sbjct  105154  TTTTATATAGTATTATAAT  105136
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  11      TAGTATTATAATAAG  25
+               |||||||||||||||
+Sbjct  514738  TAGTATTATAATAAG  514752
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  4       TTTAATATAGTATTA  18
+               |||||||||||||||
+Sbjct  591292  TTTAATATAGTATTA  591278
+
+
+>NC_021806.1 Cellulophaga phage phi14:2, complete genome
+Length=100418
+
+ Score = 35.3 bits (18),  Expect = 0.13
+ Identities = 18/18 (100%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  2     CTTTTAATATAGTATTAT  19
+             ||||||||||||||||||
+Sbjct  9849  CTTTTAATATAGTATTAT  9832
+
+
+>NC_040536.1 Esparto virus isolate SRR3939042_Esparto_2012, complete genome
+Length=183261
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Minus
+
+Query  4       TTTAATATAGTATTATAATA  23
+               ||||||||||| ||||||||
+Sbjct  169914  TTTAATATAGTCTTATAATA  169895
+
+
+>NC_027374.1 Bacillus phage Moonbeam, complete genome
+Length=161239
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 21/23 (91%), Gaps = 0/23 (0%)
+ Strand=Plus/Plus
+
+Query  2      CTTTTAATATAGTATTATAATAA  24
+              ||||| ||||| |||||||||||
+Sbjct  78842  CTTTTTATATAATATTATAATAA  78864
+
+
+>NC_021248.1 Choristoneura biennis entomopoxvirus 'L', complete genome
+Length=307691
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Minus
+
+Query  5       TTAATATAGTATTATAATAA  24
+               |||||||||||| |||||||
+Sbjct  153562  TTAATATAGTATAATAATAA  153543
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  6       TAATATAGTATTATA  20
+               |||||||||||||||
+Sbjct  279585  TAATATAGTATTATA  279599
+
+
+>NC_029022.1 Clostridium phage phiCT9441A, complete genome
+Length=46895
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Plus
+
+Query  15     ATTATAATAAGGGCAAAAAT  34
+              ||||||| ||||||||||||
+Sbjct  23757  ATTATAAGAAGGGCAAAAAT  23776
+
+
+>NC_014457.1 Clostridium phage phiCTP1, complete genome
+Length=59199
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  7      AATATAGTATTATAATA  23
+              |||||||||||||||||
+Sbjct  33688  AATATAGTATTATAATA  33704
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  4     TTTAATATAGTATTA  18
+             |||||||||||||||
+Sbjct  1866  TTTAATATAGTATTA  1852
+
+
+>NC_001993.1 Melanoplus sanguinipes entomopoxvirus, complete genome
+Length=236120
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 21/23 (91%), Gaps = 0/23 (0%)
+ Strand=Plus/Plus
+
+Query  1      ACTTTTAATATAGTATTATAATA  23
+              ||||||||||||  |||||||||
+Sbjct  11209  ACTTTTAATATACAATTATAATA  11231
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  6       TAATATAGTATTATAATAA  24
+               ||||||| |||||||||||
+Sbjct  180526  TAATATATTATTATAATAA  180508
+
+
+>NC_021249.1 Choristoneura rosaceana entomopoxvirus 'L', complete genome
+Length=282895
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 19/20 (95%), Gaps = 0/20 (0%)
+ Strand=Plus/Minus
+
+Query  5       TTAATATAGTATTATAATAA  24
+               |||||||||||| |||||||
+Sbjct  132936  TTAATATAGTATAATAATAA  132917
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATA  23
+               ||||||||||||||||
+Sbjct  258943  ATATAGTATTATAATA  258958
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  8       ATATAGTATTATAAT  22
+               |||||||||||||||
+Sbjct  180971  ATATAGTATTATAAT  180957
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  6       TAATATAGTATTATA  20
+               |||||||||||||||
+Sbjct  255248  TAATATAGTATTATA  255262
+
+
+>NC_021246.1 Mythimna separata entomopoxvirus 'L', complete genome
+Length=281182
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Minus
+
+Query  7       AATATAGTATTATAATA  23
+               |||||||||||||||||
+Sbjct  128930  AATATAGTATTATAATA  128914
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  4       TTTAATATAGTATTATAAT  22
+               ||||||| |||||||||||
+Sbjct  202078  TTTAATAAAGTATTATAAT  202096
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  4      TTTAATATAGTATTATAATAA  24
+              ||||||||  |||||||||||
+Sbjct  18408  TTTAATATTATATTATAATAA  18388
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  3      TTTTAATATAGTATTATA  20
+              |||||||||||| |||||
+Sbjct  62419  TTTTAATATAGTTTTATA  62436
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  3       TTTTAATATAGTATT  17
+               |||||||||||||||
+Sbjct  136483  TTTTAATATAGTATT  136469
+
+
+>NC_002188.1 Fowlpox virus, complete genome
+Length=288539
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAA  24
+               |||||||||||||||||
+Sbjct  155416  ATATAGTATTATAATAA  155432
+
+
+>NC_036594.1 Orpheovirus IHUMI-LCC2 genome assembly, complete genome: monopartite
+Length=1473573
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 21/23 (91%), Gaps = 0/23 (0%)
+ Strand=Plus/Plus
+
+Query  3       TTTTAATATAGTATTATAATAAG  25
+               ||||| |||| ||||||||||||
+Sbjct  988204  TTTTATTATAATATTATAATAAG  988226
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  4       TTTAATATAGTATTATAAT  22
+               ||||||||||||| |||||
+Sbjct  366186  TTTAATATAGTATCATAAT  366168
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Minus
+
+Query  9       TATAGTATTATAATAA  24
+               ||||||||||||||||
+Sbjct  462929  TATAGTATTATAATAA  462914
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Minus
+
+Query  6       TAATATAGTATTATAATAA  24
+               ||| |||||||||||||||
+Sbjct  698677  TAAGATAGTATTATAATAA  698659
+
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  6        TAATATAGTATTATAATAA  24
+                ||||||| |||||||||||
+Sbjct  1280108  TAATATATTATTATAATAA  1280126
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  6      TAATATAGTATTATA  20
+              |||||||||||||||
+Sbjct  81172  TAATATAGTATTATA  81158
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  7       AATATAGTATTATAATAA  24
+               |||||| |||||||||||
+Sbjct  497948  AATATAATATTATAATAA  497965
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  8        ATATAGTATTATAAT  22
+                |||||||||||||||
+Sbjct  1387625  ATATAGTATTATAAT  1387639
+
+
+>NC_030920.1 Bacillus phage Eldridge, complete genome
+Length=165868
+
+ Score = 33.4 bits (17),  Expect = 0.49
+ Identities = 17/17 (100%), Gaps = 0/17 (0%)
+ Strand=Plus/Plus
+
+Query  8      ATATAGTATTATAATAA  24
+              |||||||||||||||||
+Sbjct  83214  ATATAGTATTATAATAA  83230
+
+
+>NC_028962.1 Staphylococcus phage phiIPLA-C1C, complete genome
+Length=140961
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 20/22 (91%), Gaps = 0/22 (0%)
+ Strand=Plus/Minus
+
+Query  3      TTTTAATATAGTATTATAATAA  24
+              ||||||||||| || |||||||
+Sbjct  31770  TTTTAATATAGCATCATAATAA  31749
+
+
+>NC_041928.1 Staphylococcus phage phiIBB-SEP1, complete genome
+Length=139928
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 20/22 (91%), Gaps = 0/22 (0%)
+ Strand=Plus/Minus
+
+Query  3      TTTTAATATAGTATTATAATAA  24
+              ||||||||||| || |||||||
+Sbjct  32920  TTTTAATATAGCATCATAATAA  32899
+
+
+>NC_002641.1 Meleagrid herpesvirus 1, complete genome
+Length=159160
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  2      CTTTTAATATAGTATT  17
+              ||||||||||||||||
+Sbjct  96010  CTTTTAATATAGTATT  96025
+
+
+>NC_002520.1 Amsacta moorei entomopoxvirus 'L', complete genome
+Length=232392
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  3       TTTTAATATAGTATTA  18
+               ||||||||||||||||
+Sbjct  101000  TTTTAATATAGTATTA  101015
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAAG  25
+               ||||| ||||||||||||
+Sbjct  220393  ATATATTATTATAATAAG  220410
+
+
+>NC_010107.1 Bandicoot papillomatosis carcinomatosis virus type 1, complete 
+genome
+Length=7295
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Minus
+
+Query  7     AATATAGTATTATAAT  22
+             ||||||||||||||||
+Sbjct  1353  AATATAGTATTATAAT  1338
+
+
+>NC_010240.1 Helicoverpa armigera granulovirus, complete genome
+Length=169794
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 20/22 (91%), Gaps = 0/22 (0%)
+ Strand=Plus/Minus
+
+Query  3      TTTTAATATAGTATTATAATAA  24
+              ||||| |||| |||||||||||
+Sbjct  66092  TTTTACTATAATATTATAATAA  66071
+
+
+>NC_010583.1 Enterobacteria phage EPS7, complete genome
+Length=111382
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Minus
+
+Query  14    TATTATAATAAGGGCA  29
+             ||||||||||||||||
+Sbjct  5746  TATTATAATAAGGGCA  5731
+
+
+>NC_023177.1 Choristoneura murinana alphabaculovirus strain Darmstadt, complete 
+genome
+Length=124688
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  7       AATATAGTATTATAAT  22
+               ||||||||||||||||
+Sbjct  120252  AATATAGTATTATAAT  120267
+
+
+>NC_024697.1 Aureococcus anophagefferens virus isolate BtV-01, complete genome
+Length=370920
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  2       CTTTTAATATAGTATT  17
+               ||||||||||||||||
+Sbjct  293992  CTTTTAATATAGTATT  294007
+
+
+>NC_024446.1 Penguinpox virus isolate PSan92, complete genome
+Length=306862
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  2       CTTTTAATATAGTATTATA  20
+               ||||||||||| |||||||
+Sbjct  288986  CTTTTAATATATTATTATA  289004
+
+
+>NC_023582.1 Staphylococcus phage vB_SepS_SEP9, complete genome
+Length=92417
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  8      ATATAGTATTATAATA  23
+              ||||||||||||||||
+Sbjct  76368  ATATAGTATTATAATA  76383
+
+
+>NC_036582.1 Flamingopox virus FGPVKD09, complete genome
+Length=293123
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 18/19 (95%), Gaps = 0/19 (0%)
+ Strand=Plus/Plus
+
+Query  2       CTTTTAATATAGTATTATA  20
+               ||||||||||| |||||||
+Sbjct  277397  CTTTTAATATATTATTATA  277415
+
+
+>NC_031039.1 Bacillus phage AR9, complete genome
+Length=251042
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  1       ACTTTTAATATAGTAT  16
+               ||||||||||||||||
+Sbjct  161930  ACTTTTAATATAGTAT  161945
+
+
+>NC_028094.1 Chrysochromulina ericina virus isolate CeV-01B, complete genome
+Length=473558
+
+ Score = 31.5 bits (16),  Expect = 1.8
+ Identities = 16/16 (100%), Gaps = 0/16 (0%)
+ Strand=Plus/Plus
+
+Query  4       TTTAATATAGTATTAT  19
+               ||||||||||||||||
+Sbjct  308345  TTTAATATAGTATTAT  308360
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  1       ACTTTTAATATAGTATTA  18
+               |||||||||||| |||||
+Sbjct  309202  ACTTTTAATATAATATTA  309219
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  3       TTTTAATATAGTATT  17
+               |||||||||||||||
+Sbjct  351652  TTTTAATATAGTATT  351666
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  4       TTTAATATAGTATTATAATAA  24
+               ||||| ||| |||||||||||
+Sbjct  466242  TTTAAGATAATATTATAATAA  466222
+
+
+>NC_046965.1 Canada goose coronavirus strain Cambridge_Bay_2017, complete 
+genome
+Length=28539
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  1     ACTTTTAATATAGTA  15
+             |||||||||||||||
+Sbjct  9491  ACTTTTAATATAGTA  9505
+
+
+>NC_044939.1 Heliothis virescens ascovirus 3g, complete genome
+Length=199721
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  3      TTTTAATATAGTATT  17
+              |||||||||||||||
+Sbjct  98241  TTTTAATATAGTATT  98255
+
+
+>NC_022918.1 Staphylococcus phage S25-4 DNA, complete genome
+Length=132123
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  14     TATTATAATAAGGGCAAA  31
+              ||||| ||||||||||||
+Sbjct  36457  TATTACAATAAGGGCAAA  36474
+
+
+>NC_022920.1 Staphylococcus phage S25-3 DNA, complete genome
+Length=139738
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  14     TATTATAATAAGGGCAAA  31
+              ||||| ||||||||||||
+Sbjct  31590  TATTACAATAAGGGCAAA  31607
+
+
+>NC_034383.1 Pacmanvirus A23 genome assembly, complete genome: monopartite
+Length=395405
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 21/24 (88%), Gaps = 0/24 (0%)
+ Strand=Plus/Minus
+
+Query  4      TTTAATATAGTATTATAATAAGGG  27
+              ||||||| ||  ||||||||||||
+Sbjct  29439  TTTAATAAAGCGTTATAATAAGGG  29416
+
+
+>NC_016658.1 Cyanophage NATL1A-7, complete genome
+Length=47741
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  7      AATATAGTATTATAA  21
+              |||||||||||||||
+Sbjct  38928  AATATAGTATTATAA  38942
+
+
+>NC_012663.1 Lactococcus phage P087, complete genome
+Length=60074
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  10     ATAGTATTATAATAA  24
+              |||||||||||||||
+Sbjct  23836  ATAGTATTATAATAA  23850
+
+
+>NC_015263.1 Lactococcus phage 949, complete genome
+Length=114768
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  9      TATAGTATTATAATA  23
+              |||||||||||||||
+Sbjct  15304  TATAGTATTATAATA  15290
+
+
+>NC_015251.1 Aeromonas phage 65, complete genome
+Length=235229
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  6      TAATATAGTATTATAATA  23
+              ||||||||||||| ||||
+Sbjct  53620  TAATATAGTATTAGAATA  53603
+
+
+>NC_016072.1 Megavirus chiliensis, complete genome
+Length=1259197
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  3       TTTTAATATAGTATTATAATA  23
+               ||||||||||||  |||||||
+Sbjct  179663  TTTTAATATAGTTATATAATA  179683
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  6       TAATATAGTATTATA  20
+               |||||||||||||||
+Sbjct  496693  TAATATAGTATTATA  496679
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7        AATATAGTATTATAA  21
+                |||||||||||||||
+Sbjct  1194015  AATATAGTATTATAA  1194001
+
+
+>NC_015228.1 Sweet potato vein clearing virus, complete genome
+Length=8837
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  2     CTTTTAATATAGTAT  16
+             |||||||||||||||
+Sbjct  7585  CTTTTAATATAGTAT  7571
+
+
+>NC_011588.1 Oryctes rhinoceros virus, complete genome
+Length=127615
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  6      TAATATAGTATTATA  20
+              |||||||||||||||
+Sbjct  21068  TAATATAGTATTATA  21082
+
+
+>NC_001270.2 Spiroplasma phage SVTS2, complete genome
+Length=6825
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Minus
+
+Query  15    ATTATAATAAGGGCAAAAATA  35
+             ||||| || ||||||||||||
+Sbjct  3613  ATTATTATCAGGGCAAAAATA  3593
+
+
+>NC_002484.2 Bacteriophage D3, complete genome
+Length=56426
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  15     ATTATAATAAGGGCAAAAATA  35
+              ||||| ||||||||||| |||
+Sbjct  23878  ATTATGATAAGGGCAAATATA  23898
+
+
+>NC_005309.1 Canarypox virus, complete genome
+Length=359853
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  10      ATAGTATTATAATAA  24
+               |||||||||||||||
+Sbjct  162870  ATAGTATTATAATAA  162856
+
+
+>NC_015464.1 Campylobacter phage NCTC12673, complete genome
+Length=135041
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  16     TTATAATAAGGGCAA  30
+              |||||||||||||||
+Sbjct  21548  TTATAATAAGGGCAA  21562
+
+
+>NC_008888.1 Glypta fumiferanae ichnovirus segment B46, complete sequence
+Length=2723
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  7     AATATAGTATTATAA  21
+             |||||||||||||||
+Sbjct  1036  AATATAGTATTATAA  1022
+
+
+>NC_003389.1 Swinepox virus, complete genome
+Length=146454
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  4      TTTAATATAGTATTA  18
+              |||||||||||||||
+Sbjct  51361  TTTAATATAGTATTA  51347
+
+
+>NC_005137.2 Choristoneura fumiferana DEF MNPV, complete genome
+Length=131160
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  18     ATAATAAGGGCAAAA  32
+              |||||||||||||||
+Sbjct  59531  ATAATAAGGGCAAAA  59517
+
+
+>NC_008520.2 Anticarsia gemmatalis nucleopolyhedrovirus, complete genome
+Length=132239
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18     ATAATAAGGGCAAAA  32
+              |||||||||||||||
+Sbjct  70595  ATAATAAGGGCAAAA  70609
+
+
+>NC_026430.1 Condylorrhiza vestigialis MNPV, complete genome
+Length=125767
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18     ATAATAAGGGCAAAA  32
+              |||||||||||||||
+Sbjct  67800  ATAATAAGGGCAAAA  67814
+
+
+>NC_025830.1 Escherichia phage Av-05, complete genome
+Length=120938
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  3      TTTTAATATAGTATTATA  20
+              |||||| |||||||||||
+Sbjct  19104  TTTTAAAATAGTATTATA  19121
+
+
+>NC_021802.1 Cellulophaga phage phi10:1, complete genome
+Length=53664
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Minus
+
+Query  3      TTTTAATATAGTATT  17
+              |||||||||||||||
+Sbjct  48251  TTTTAATATAGTATT  48237
+
+
+>NC_021333.1 Phaeocystis globosa virus virophage, complete genome
+Length=19527
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  1   ACTTTTAATATAGTATTA  18
+           |||||||||||| |||||
+Sbjct  24  ACTTTTAATATATTATTA  41
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  1    ACTTTTAATATAGTATTA  18
+            |||||||||||| |||||
+Sbjct  713  ACTTTTAATATATTATTA  730
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1      ACTTTTAATATAGTATTA  18
+              |||||||||||| |||||
+Sbjct  18815  ACTTTTAATATATTATTA  18798
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  1      ACTTTTAATATAGTATTA  18
+              |||||||||||| |||||
+Sbjct  19504  ACTTTTAATATATTATTA  19487
+
+
+>NC_021312.1 Phaeocystis globosa virus strain 16T, complete genome
+Length=459984
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  8       ATATAGTATTATAATAAGGGC  28
+               ||||| ||||||||||| |||
+Sbjct  122254  ATATACTATTATAATAATGGC  122274
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  7       AATATAGTATTATAATAA  24
+               |||||| |||||||||||
+Sbjct  257379  AATATATTATTATAATAA  257396
+
+
+>NC_033423.1 Lymphocystis disease virus Sa isolate SA9, complete genome
+Length=208501
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  15      ATTATAATAAGGGCAAAA  32
+               |||||| |||||||||||
+Sbjct  158559  ATTATATTAAGGGCAAAA  158542
+
+
+>NC_031909.1 Campylobacter phage PC14, complete genome
+Length=134927
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  16     TTATAATAAGGGCAA  30
+              |||||||||||||||
+Sbjct  56544  TTATAATAAGGGCAA  56558
+
+
+>NC_031761.1 Anticarsia gemmatalis multicapsid nucleopolyhedrovirus isolate 
+AgMNPV-37, complete genome
+Length=131855
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  18     ATAATAAGGGCAAAA  32
+              |||||||||||||||
+Sbjct  70204  ATAATAAGGGCAAAA  70218
+
+
+>NC_030656.1 Pteropox virus strain Australia, complete genome
+Length=133492
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  5       TTAATATAGTATTATAAT  22
+               |||||| |||||||||||
+Sbjct  128746  TTAATAGAGTATTATAAT  128763
+
+
+>NC_023426.1 Anomala cuprea entomopoxvirus DNA, complete genome, strain: CV6M
+Length=245717
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 19/21 (90%), Gaps = 0/21 (0%)
+ Strand=Plus/Plus
+
+Query  5       TTAATATAGTATTATAATAAG  25
+               |||||| | ||||||||||||
+Sbjct  135857  TTAATAAAATATTATAATAAG  135877
+
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  7       AATATAGTATTATAATAA  24
+               |||||| |||||||||||
+Sbjct  214689  AATATAATATTATAATAA  214706
+
+
+>NC_018272.1 Persicivirga phage P12024L, complete genome
+Length=35652
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  1      ACTTTTAATATAGTA  15
+              |||||||||||||||
+Sbjct  34613  ACTTTTAATATAGTA  34627
+
+
+>NC_018271.1 Persicivirga phage P12024S, complete genome
+Length=35700
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  1      ACTTTTAATATAGTA  15
+              |||||||||||||||
+Sbjct  34664  ACTTTTAATATAGTA  34678
+
+
+>NC_029094.1 Pseudoalteromonas phage H101, complete genome
+Length=131903
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Minus
+
+Query  10     ATAGTATTATAATAAGGG  27
+              ||| ||||||||||||||
+Sbjct  62074  ATAATATTATAATAAGGG  62057
+
+
+>NC_028955.1 Prochlorococcus phage P-TIM68, complete genome
+Length=197361
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  10      ATAGTATTATAATAAGGG  27
+               |||| |||||||||||||
+Sbjct  120422  ATAGGATTATAATAAGGG  120439
+
+
+>NC_027778.1 Scale drop disease virus isolate C4575, partial genome
+Length=124244
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 15/15 (100%), Gaps = 0/15 (0%)
+ Strand=Plus/Plus
+
+Query  22      TAAGGGCAAAAATAC  36
+               |||||||||||||||
+Sbjct  116322  TAAGGGCAAAAATAC  116336
+
+
+>NC_027016.1 Papio ursinus cytomegalovirus isolate OCOM4-52, complete genome
+Length=226084
+
+ Score = 29.5 bits (15),  Expect = 7.0
+ Identities = 17/18 (94%), Gaps = 0/18 (0%)
+ Strand=Plus/Plus
+
+Query  8      ATATAGTATTATAATAAG  25
+              ||||| ||||||||||||
+Sbjct  69237  ATATATTATTATAATAAG  69254
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Effective search space used: 5402613736
+
+
+  Database: refseq.200.viral.genomic.fna
+    Posted date:  Jun 15, 2020  8:02 PM
+  Number of letters in database: 318,032,494
+  Number of sequences in database:  12,194
+
+
+
+Matrix: blastn matrix 1 -2
+Gap Penalties: Existence: 5, Extension: 2

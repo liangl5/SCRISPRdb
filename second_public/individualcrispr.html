@@ -18,10 +18,10 @@
 
 
 
-    <script src="sdb_individualcrispr.js" defer></script>
-    <script src="shared.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="individualcrispr.css">
-    <link rel="stylesheet" type="text/css" href="shared.css">
+    <script src="/javascriptFiles/individualcrispr.js" defer></script>
+    <script src="/javascriptFiles/shared.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/cssFiles/individualcrispr.css">
+    <link rel="stylesheet" type="text/css" href="/cssFiles/shared.css">
 
 
 
@@ -48,7 +48,7 @@
             </div>
         </div>           
         <button class="tablinks" onclick="openTab(event, 'Download', 0)">Download</button>
-        <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+        <button class="tablinks" onclick="openTab(event, 'Contact')">Contact Us</button>
         
     </div>
 
@@ -57,23 +57,83 @@
 
     
     <div id="Browse Data" class="tabcontent">
-        <button id="back">Back</button>
+        <button id="back">&laquo; Back</button>
         <h3 id="name">Name</h3>
         
     
         <div id="basic_info"></div>
         <img id="weblogo" src="" alt="Weblogo">
-        <div id="ButtonArea">
-          <button id="downloadSpacer">Download Spacers</button>
-          <button id="downloadFullCrisprNoFormat">Download Full CRISPR No Fasta Format</button>
-          <button id="downloadFullCrisprFormat">Download Full CRISPR w/Fasta Format</button>
-          <button>tmp1</button>
-          <button>tmp2</button>
+
+        <div id="buttonAreaDownload">
+          <button class="inlineButtons" id="downloadSpacer">Download Spacers</button>
+          <button class="inlineButtons" id="downloadFullCrisprNoFormat">Download Full CRISPR No Format</button>
+          <button class="inlineButtons" id="downloadFullCrisprFormat">Download Full CRISPR with Format</button>
         </div>
+
         <div id="chartContainer" style="height: 300px; width: 100%;"></div><br></br><br></br>
+
+        <div id="buttonAreaBlast">
+          <button class="inlineButtons" id="blastParameters">Blast Parameters</button>
+          <button class="inlineButtons" id="blast">Blast Selected Spacers</button>
+        </div>
+        <div id="blastParametersContent">
+          <form>
+            <!-- <label class="formElements" for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label class="formElements" for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"> -->
+
+            <p class="formElements optionLabels">Word Size:<br/></p>
+            <select class="formElements selects" id="wordSize">
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11" selected="selected">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+            </select> 
+            <br/><br/>
+
+            <p class="formElements optionLabels">Database:<br/></p>
+            <select class="formElements selects" id="database">
+              <option value="Virus">Virus</option>
+              <option value="Plasmids">Plasmids</option>
+            </select> 
+            <br/><br/>
+
+            <p class="formElements optionLabels">Match/Mismatch Score:<br/></p>
+            <select class="formElements selects" id="matchScore">
+              <option value="1|-2">Match 1/Mismatch -2</option>
+              <option value="1|-3">Match 1/Mismatch -3</option>
+              <option value="1|-4">Match 1/Mismatch -4</option>
+              <option value="2|-3">Match 2/Mismatch -3</option>
+              <option value="4|-5">Match 4/Mismatch -5</option>
+              <option value="1|-1">Match 1/Mismatch -1</option>
+            </select> 
+            <br/><br/>
+
+
+            <p class="formElements optionLabels">Gap Score:<br/></p>
+            <select class="formElements selects" id="gapScore">
+              <option value="5|2">Existence 5/Extension 2</option>
+              <option value="2|2">Existence 2/Extension 2</option>
+              <option value="1|2">Existence 1/Extension 2</option>
+              <option value="0|2">Existence 0/Extension 2</option>
+              <option value="3|1">Existence 3/Extension 1</option>
+              <option value="2|1">Existence 2/Extension 1</option>
+              <option value="1|1">Existence 1/Extension 1</option>
+            </select> 
+            <br/><br/>
+            
+            <p class="formElements optionLabels">E Value:<br/></p>
+            <input class="fillInBox" type="text" id="evalue" value="10">
+
+          </form>
+        </div>
         <div id="show"></div>
     </div>
-
+    
     <div id="CRISPR Occurrences" class="tabcontent"></div>
       
     <div id="Genome Lengths" class="tabcontent"></div>
@@ -89,6 +149,7 @@
     
       <div id = "ArchaeaSpacers" class = "tabcontent-2"></div>
       <div id = "BacteriaSpacers" class = "tabcontent-2"></div>
+      
     </div>
     
     <div id="Repeats" class="tabcontent">
